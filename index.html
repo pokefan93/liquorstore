@@ -26,8 +26,13 @@
     <header class="site-header" id="home" data-header>
       <div class="container nav-shell">
         <a class="brand" href="#home" aria-label="Taylor's Tech Solutions home">
-          <span class="brand-mark" aria-hidden="true">TTS</span>
-          <span class="brand-wordmark">Taylor's Tech Solutions</span>
+          <img
+            class="brand-logo"
+            src="images/logo-white.png"
+            alt=""
+            width="377"
+            height="73"
+          />
         </a>
 
         <button
@@ -80,56 +85,67 @@
           </div>
 
           <div class="hero-visual reveal reveal-delay-1" data-parallax>
-            <article class="browser-mockup motion-layer" style="--depth: 0.45">
-              <div class="browser-topbar">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="browser-content">
-                <div class="browser-line lg"></div>
-                <div class="browser-line"></div>
-                <div class="browser-line short"></div>
-                <div class="browser-cards">
-                  <div></div>
-                  <div></div>
-                  <div></div>
+            <div class="hero-stage">
+              <article class="browser-mockup motion-layer" style="--depth: 0.45">
+                <div class="browser-topbar">
+                  <span></span><span></span><span></span>
                 </div>
-              </div>
-            </article>
+                <div class="browser-content">
+                  <div class="browser-line lg"></div>
+                  <div class="browser-line"></div>
+                  <div class="browser-line short"></div>
+                  <div class="browser-cards">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </article>
 
-            <article class="phone-mockup motion-layer" style="--depth: 0.7" aria-label="App mockup">
-              <div class="phone-notch"></div>
-              <div class="phone-content">
-                <div class="phone-line"></div>
-                <div class="phone-chart"></div>
-                <div class="phone-chip">App UX</div>
-              </div>
-            </article>
+              <article class="phone-mockup motion-layer" style="--depth: 0.7" aria-label="App mockup">
+                <div class="phone-notch"></div>
+                <div class="phone-content">
+                  <div class="phone-line"></div>
+                  <div class="phone-chart"></div>
+                  <div class="phone-chip">App UX</div>
+                </div>
+              </article>
 
-            <article class="insight-panel motion-layer" style="--depth: 0.55">
-              <p class="insight-label">Launch Snapshot</p>
-              <div class="insight-bars">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <p class="insight-footer">Web + App Ecosystem</p>
-            </article>
+              <article class="insight-panel motion-layer" style="--depth: 0.55">
+                <p class="insight-label">Launch Snapshot</p>
+                <div class="insight-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p class="insight-footer">Web + App Ecosystem</p>
+              </article>
 
-            <div class="floating-chip chip-left motion-layer" style="--depth: 0.9">Premium Quality</div>
-            <div class="floating-chip chip-right motion-layer" style="--depth: 0.8">Conversion Focus</div>
+              <article class="brand-signal motion-layer" style="--depth: 0.82">
+                <img
+                  class="brand-signal-logo"
+                  src="images/logo-white.png"
+                  alt=""
+                  width="377"
+                  height="73"
+                />
+                <p>Custom websites, apps, and polished launch-ready builds.</p>
+              </article>
+
+              <div class="floating-chip chip-left motion-layer" style="--depth: 0.9">Launch-Ready</div>
+              <div class="floating-chip chip-right motion-layer" style="--depth: 0.8">Premium UX</div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="trust-strip" aria-label="Studio value highlights">
-        <div class="container">
-          <ul>
-            <li>Custom-built solutions</li>
-            <li>Modern design + development</li>
-            <li>Polished user experiences</li>
-            <li>Collaborative process</li>
-            <li>Launch-ready quality</li>
-          </ul>
+        <div class="container trust-items">
+          <p>Custom-built solutions</p>
+          <p>Modern design + development</p>
+          <p>Polished user experiences</p>
+          <p>Collaborative process</p>
+          <p>Launch-ready quality</p>
         </div>
       </section>
 
@@ -198,55 +214,83 @@
       </section>
 
       <section class="section choose-us" aria-labelledby="why-choose-us-title">
-        <div class="container choose-layout">
-          <div class="choose-intro reveal">
+        <div class="container">
+          <div class="section-head choose-head reveal">
             <p class="eyebrow">Why Clients Choose Us</p>
             <h2 id="why-choose-us-title">Premium studio quality with a process that feels easy to trust.</h2>
             <p>
               We combine strategic thinking, polished design, and clean build quality with clear
               communication that keeps projects smooth from kickoff to launch.
             </p>
-            <div class="studio-card">
-              <p class="studio-card-title">What it feels like to work together</p>
-              <ul>
-                <li>Clear milestones and transparent communication</li>
-                <li>Design decisions tied to your business goals</li>
-                <li>Detail-focused execution that feels refined and ready</li>
-              </ul>
-            </div>
           </div>
 
-          <div class="choose-grid">
-            <article class="choose-point reveal">
-              <p class="point-number">01</p>
-              <h3>Custom work, never template-driven</h3>
-              <p>Each build is tailored to your brand, audience, and growth goals.</p>
+          <div class="choose-showcase">
+            <article class="choose-feature reveal">
+              <div class="choose-feature-top">
+                <img
+                  class="choose-logo"
+                  src="images/logo-white.png"
+                  alt=""
+                  width="377"
+                  height="73"
+                />
+                <span class="choose-badge">Studio Build Partner</span>
+              </div>
+
+              <p class="choose-feature-title">
+                Clear, collaborative, and carefully refined from kickoff to launch.
+              </p>
+
+              <div class="choose-pill-row" aria-label="Working style">
+                <span>Clear milestones</span>
+                <span>Tailored strategy</span>
+                <span>Refined execution</span>
+              </div>
+
+              <div class="choose-feature-grid">
+                <div>
+                  <strong>Custom</strong>
+                  <p>Built around the brand, audience, and goals.</p>
+                </div>
+                <div>
+                  <strong>Polished</strong>
+                  <p>Premium design quality with clean execution.</p>
+                </div>
+              </div>
             </article>
-            <article class="choose-point reveal reveal-delay-1">
-              <p class="point-number">02</p>
-              <h3>Premium design quality</h3>
-              <p>Refined UI, balanced typography, and polished interactions that elevate trust.</p>
-            </article>
-            <article class="choose-point reveal reveal-delay-2">
-              <p class="point-number">03</p>
-              <h3>Modern build standards</h3>
-              <p>Responsive, performance-conscious front-end work that is launch-ready and clean.</p>
-            </article>
-            <article class="choose-point reveal">
-              <p class="point-number">04</p>
-              <h3>Strategic and collaborative</h3>
-              <p>We collaborate closely, align on priorities, and keep momentum with clarity.</p>
-            </article>
-            <article class="choose-point reveal reveal-delay-1">
-              <p class="point-number">05</p>
-              <h3>Attention to detail</h3>
-              <p>From spacing and hierarchy to copy flow, we refine the details that matter.</p>
-            </article>
-            <article class="choose-point reveal reveal-delay-2">
-              <p class="point-number">06</p>
-              <h3>Approachable partnership</h3>
-              <p>Professional and friendly communication that keeps the process low-friction.</p>
-            </article>
+
+            <div class="choose-grid">
+              <article class="choose-point reveal">
+                <span class="choose-icon" aria-hidden="true"></span>
+                <h3>Tailored to your brand</h3>
+                <p>No templates. No cookie-cutter layouts.</p>
+              </article>
+              <article class="choose-point reveal reveal-delay-1">
+                <span class="choose-icon" aria-hidden="true"></span>
+                <h3>Refined design quality</h3>
+                <p>UI that feels premium, current, and credible.</p>
+              </article>
+              <article class="choose-point reveal reveal-delay-2">
+                <span class="choose-icon" aria-hidden="true"></span>
+                <h3>Modern build quality</h3>
+                <p>Responsive, fast, and ready for launch.</p>
+              </article>
+              <article class="choose-point reveal">
+                <span class="choose-icon" aria-hidden="true"></span>
+                <h3>Strategic thinking</h3>
+                <p>Design decisions tied to real business goals.</p>
+              </article>
+              <article class="choose-point reveal reveal-delay-1">
+                <span class="choose-icon" aria-hidden="true"></span>
+                <h3>Clear communication</h3>
+                <p>Straight answers and steady project momentum.</p>
+              </article>
+              <article class="choose-point reveal reveal-delay-2">
+                <span class="choose-icon" aria-hidden="true"></span>
+                <h3>Smooth collaboration</h3>
+                <p>Friendly feedback loops with low friction.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -439,14 +483,19 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="#home" aria-label="Taylor's Tech Solutions home">
-            <span class="brand-mark" aria-hidden="true">TTS</span>
-            <span class="brand-wordmark">Taylor's Tech Solutions</span>
-          </a>
-          <p>
-            Taylor's Tech Solutions is a premium digital studio for custom websites, apps, and
+        <div class="container footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="#home" aria-label="Taylor's Tech Solutions home">
+              <img
+                class="brand-logo"
+                src="images/logo-white.png"
+                alt=""
+                width="377"
+                height="73"
+              />
+            </a>
+            <p>
+              Taylor's Tech Solutions is a premium digital studio for custom websites, apps, and
             launch-ready web plus app ecosystems.
           </p>
         </div>
