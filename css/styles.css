@@ -1540,6 +1540,11 @@ img {
   letter-spacing: 0.04em;
 }
 
+.signal-step h3 {
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  max-width: 15ch;
+}
+
 .signal-step p {
   color: var(--text-soft);
   max-width: 34ch;
