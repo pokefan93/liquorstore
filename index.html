@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
+    <script type="module" src="js/signal-scene.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -221,6 +222,102 @@
           <p>Polished user experiences</p>
           <p>Collaborative process</p>
           <p>Launch-ready quality</p>
+        </div>
+      </section>
+
+      <section
+        class="section signal-experience"
+        id="experience"
+        aria-labelledby="experience-title"
+        data-signal-section
+      >
+        <div class="container signal-intro reveal">
+          <p class="eyebrow">Scroll Signal</p>
+          <h2 id="experience-title">A branded motion system that sharpens as you move down the page.</h2>
+          <p>
+            The scene starts as raw signal, locks into your logo, then settles into a launch-ready
+            system built for web, app, and everything in between.
+          </p>
+        </div>
+
+        <div class="container signal-story">
+          <div class="signal-stage-column">
+            <div class="signal-stage-sticky reveal" data-signal-shell>
+              <div class="signal-stage-frame">
+                <div class="signal-stage-meta">
+                  <p class="signal-stage-label">Brand Core</p>
+                  <p class="signal-stage-caption">Scroll to tune the system</p>
+                </div>
+
+                <div class="signal-canvas-shell">
+                  <canvas
+                    class="signal-canvas"
+                    data-signal-canvas
+                    aria-hidden="true"
+                  ></canvas>
+
+                  <div class="signal-fallback" data-signal-fallback>
+                    <div class="signal-fallback-orbit signal-fallback-orbit-one" aria-hidden="true"></div>
+                    <div class="signal-fallback-orbit signal-fallback-orbit-two" aria-hidden="true"></div>
+                    <div class="signal-fallback-grid" aria-hidden="true"></div>
+                    <div class="signal-fallback-core" aria-hidden="true">
+                      <img
+                        class="signal-fallback-logo"
+                        src="images/logo-white.png"
+                        alt=""
+                        width="377"
+                        height="73"
+                      />
+                    </div>
+                    <div class="signal-fallback-chip signal-fallback-chip-top">Fallback Mode</div>
+                    <div class="signal-fallback-chip signal-fallback-chip-bottom">Older devices stay smooth</div>
+                  </div>
+                </div>
+
+                <div class="signal-stage-status" aria-hidden="true">
+                  <span data-signal-meter></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="signal-steps" data-signal-steps>
+            <article class="signal-step reveal is-active" data-signal-step="0">
+              <span class="signal-step-index">01</span>
+              <h3>Ignite the signal</h3>
+              <p>
+                A low-lit energy field comes online first, giving the section a clear sense of
+                depth before the logo resolves into focus.
+              </p>
+            </article>
+
+            <article class="signal-step reveal" data-signal-step="1">
+              <span class="signal-step-index">02</span>
+              <h3>Shape the brand core</h3>
+              <p>
+                The logo plaque rotates into view while orbit rings tighten around it, tying the
+                motion language back to your visual identity.
+              </p>
+            </article>
+
+            <article class="signal-step reveal" data-signal-step="2">
+              <span class="signal-step-index">03</span>
+              <h3>Connect web and app layers</h3>
+              <p>
+                The geometry widens and sync lines settle in, echoing how your projects link
+                websites, apps, and launch systems into one clean build.
+              </p>
+            </article>
+
+            <article class="signal-step reveal" data-signal-step="3">
+              <span class="signal-step-index">04</span>
+              <h3>Lock into launch mode</h3>
+              <p>
+                Motion calms down, the glow sharpens, and the final state feels more engineered
+                than decorative, which fits the rest of the homepage branding.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -663,4 +760,3 @@
     </footer>
   </body>
 </html>
-
