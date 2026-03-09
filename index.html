@@ -1,46 +1,537 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Taylor's Technology Solutions, LLC.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      background:#0B1220;
-      color:white;
-      font-family:Arial;
-      text-align:center;
-      padding:60px;
-    }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Taylor's Tech Solutions is a premium digital studio building custom websites, custom mobile apps, and complete web plus app platforms."
+    />
+    <title>Taylor's Tech Solutions | Premium Website and App Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    h1 {
-      font-size:48px;
-      color:#4DA3FF;
-    }
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
 
-    p {
-      font-size:18px;
-      color:#9BA7BD;
-    }
+    <header class="site-header" id="home" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="Taylor's Tech Solutions home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">Taylor's Tech Solutions</span>
+        </a>
 
-    .button {
-      margin-top:30px;
-      padding:16px 28px;
-      background:#FF4D4D;
-      color:white;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:bold;
-      display:inline-block;
-    }
-  </style>
-</head>
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
 
-<body>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="nav-ctas">
+            <a class="btn btn-secondary" href="#contact">Book a Call</a>
+            <a class="btn btn-primary" href="#contact">Start Your Project</a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-<h1>Taylor's Tech Solutions</h1>
+    <main id="main-content">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Premium Digital Product Studio</p>
+            <h1>
+              Custom websites and mobile apps crafted to make brands look
+              world-class.
+            </h1>
+            <p class="hero-subcopy">
+              Taylor's Tech Solutions partners with businesses, startups, and
+              ambitious brands to design and build standout digital experiences
+              that convert, scale, and feel unmistakably premium.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Start Your Project</a>
+              <a class="btn btn-ghost" href="#work">See Our Work</a>
+            </div>
+            <ul class="value-tags" aria-label="Studio value indicators">
+              <li>Custom-built</li>
+              <li>Modern UX/UI</li>
+              <li>Scalable builds</li>
+              <li>Launch-ready execution</li>
+            </ul>
+          </div>
 
-<p>
-Get the technology help you need today!</p>
+          <div class="hero-visual reveal reveal-delay-1" data-parallax>
+            <div class="visual-orb orb-left" aria-hidden="true"></div>
+            <div class="visual-orb orb-right" aria-hidden="true"></div>
 
-</body>
+            <article class="mockup-browser motion-layer" style="--depth: 0.35">
+              <div class="mockup-topbar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mockup-content">
+                <div class="line lg"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="card-row">
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="mockup-phone motion-layer" style="--depth: 0.65">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen">
+                <div class="line sm"></div>
+                <div class="line sm"></div>
+                <div class="app-chart"></div>
+                <div class="app-chip">App Experience</div>
+              </div>
+            </article>
+
+            <article class="mockup-panel motion-layer" style="--depth: 0.5">
+              <p class="panel-title">Platform Snapshot</p>
+              <div class="panel-bars">
+                <span></span><span></span><span></span>
+              </div>
+              <p class="panel-foot">Web + App Integration</p>
+            </article>
+
+            <div class="metric-chip chip-one motion-layer" style="--depth: 0.9">
+              Premium UX
+            </div>
+            <div class="metric-chip chip-two motion-layer" style="--depth: 0.75">
+              Conversion Focus
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Services</p>
+            <h2>High-end digital builds, tailored to your growth goals.</h2>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                  <path d="M3 9h18"></path>
+                </svg>
+              </div>
+              <h3>Websites</h3>
+              <p>
+                Custom business websites, landing pages, and premium web
+                experiences designed for credibility, performance, and
+                conversion.
+              </p>
+              <a href="#contact" class="text-link">Build a custom website</a>
+            </article>
+
+            <article class="service-card reveal reveal-delay-1">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <rect x="7" y="2.5" width="10" height="19" rx="2"></rect>
+                  <path d="M10 5.5h4"></path>
+                  <path d="M11.2 18.6h1.6"></path>
+                </svg>
+              </div>
+              <h3>Apps</h3>
+              <p>
+                Modern mobile apps and digital tools with polished interface
+                design, intuitive flows, and seamless user experiences.
+              </p>
+              <a href="#contact" class="text-link">Design your app product</a>
+            </article>
+
+            <article class="service-card reveal reveal-delay-2">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <rect x="2.5" y="5" width="9" height="7.5" rx="1.5"></rect>
+                  <rect x="12.5" y="11.5" width="9" height="10" rx="1.5"></rect>
+                  <path d="M11.5 8.6h2.1"></path>
+                  <path d="M10.5 15.8h2.1"></path>
+                </svg>
+              </div>
+              <h3>Web + App Combos</h3>
+              <p>
+                Full digital ecosystems that combine a high-end website with a
+                connected app experience for a cohesive customer journey.
+              </p>
+              <a href="#contact" class="text-link">Launch the full platform</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section outcomes">
+        <div class="container outcomes-layout">
+          <div class="outcomes-copy reveal">
+            <p class="eyebrow">Outcomes</p>
+            <h2>Digital experiences built to elevate perception and results.</h2>
+            <p>
+              We combine strategic product thinking with premium design and
+              clean engineering so your digital presence does more than look
+              good, it actively supports growth.
+            </p>
+          </div>
+          <div class="outcomes-grid">
+            <article class="outcome-card reveal">
+              <h3>Stronger first impressions</h3>
+              <p>
+                Distinctive design language that signals quality and builds
+                trust from the first click.
+              </p>
+            </article>
+            <article class="outcome-card reveal reveal-delay-1">
+              <h3>Modern digital presence</h3>
+              <p>
+                Position your brand with a polished experience that reflects
+                where your business is headed.
+              </p>
+            </article>
+            <article class="outcome-card reveal reveal-delay-2">
+              <h3>Higher conversion potential</h3>
+              <p>
+                Intentional flows, clear calls to action, and frictionless
+                journeys designed to convert.
+              </p>
+            </article>
+            <article class="outcome-card reveal">
+              <h3>Better UX at every touchpoint</h3>
+              <p>
+                Smooth, responsive interfaces that make your product feel
+                intuitive and premium.
+              </p>
+            </article>
+            <article class="outcome-card reveal reveal-delay-1">
+              <h3>Tailored systems, not templates</h3>
+              <p>
+                Solutions designed around your audience, goals, and brand
+                strategy, not generic presets.
+              </p>
+            </article>
+            <article class="outcome-card reveal reveal-delay-2">
+              <h3>Scalable foundation</h3>
+              <p>
+                Launch with clean architecture and room to expand as your
+                business grows.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section work" id="work">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Featured Work</p>
+            <h2>Concept builds that show what premium execution looks like.</h2>
+          </div>
+
+          <div class="work-grid">
+            <article class="project-card reveal">
+              <div class="project-media media-website" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p class="project-category">High-End Website</p>
+              <h3>Atrium Advisory</h3>
+              <p>
+                A conversion-focused digital presence that reframed a consulting
+                firm as a modern premium brand.
+              </p>
+              <a href="#contact" class="text-link">View Project</a>
+            </article>
+
+            <article class="project-card reveal reveal-delay-1">
+              <div class="project-media media-app" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p class="project-category">Sleek Mobile App</p>
+              <h3>PulseFlow</h3>
+              <p>
+                A frictionless app experience that increased engagement with a
+                cleaner onboarding and smarter in-app navigation.
+              </p>
+              <a href="#contact" class="text-link">View Project</a>
+            </article>
+
+            <article class="project-card reveal reveal-delay-2">
+              <div class="project-media media-platform" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p class="project-category">Web + App Platform</p>
+              <h3>Northline Studio</h3>
+              <p>
+                A synchronized website and app ecosystem designed to unify brand
+                storytelling with digital product performance.
+              </p>
+              <a href="#contact" class="text-link">View Project</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="process">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Process</p>
+            <h2>A strategic path from idea to launch.</h2>
+          </div>
+
+          <ol class="process-grid">
+            <li class="process-step reveal">
+              <p class="step-title">Discover</p>
+              <p>
+                Clarify goals, audience, and product direction so every
+                decision starts with strategy.
+              </p>
+            </li>
+            <li class="process-step reveal reveal-delay-1">
+              <p class="step-title">Design</p>
+              <p>
+                Shape premium UI/UX systems with strong hierarchy, clarity, and
+                a distinct visual edge.
+              </p>
+            </li>
+            <li class="process-step reveal reveal-delay-2">
+              <p class="step-title">Build</p>
+              <p>
+                Develop modern, clean, responsive code engineered for
+                performance and future growth.
+              </p>
+            </li>
+            <li class="process-step reveal">
+              <p class="step-title">Launch</p>
+              <p>
+                Deliver a polished release with final refinements, quality
+                checks, and launch-ready confidence.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section reasons">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Why Work With Us</p>
+            <h2>Built for teams that expect quality at every layer.</h2>
+          </div>
+
+          <div class="reasons-grid">
+            <article class="reason-card reveal">
+              <h3>Custom design + development</h3>
+              <p>
+                Every project is built specifically for your brand and goals,
+                never forced into a template.
+              </p>
+            </article>
+            <article class="reason-card reveal reveal-delay-1">
+              <h3>Strategy-led execution</h3>
+              <p>
+                We align design and engineering decisions with outcomes that
+                support growth, trust, and conversion.
+              </p>
+            </article>
+            <article class="reason-card reveal reveal-delay-2">
+              <h3>Premium visual quality</h3>
+              <p>
+                Distinctive interfaces that communicate sophistication and make
+                your product feel exceptional.
+              </p>
+            </article>
+            <article class="reason-card reveal">
+              <h3>Clean modern code</h3>
+              <p>
+                Lightweight front-end architecture with strong responsiveness,
+                accessibility, and maintainability.
+              </p>
+            </article>
+            <article class="reason-card reveal reveal-delay-1">
+              <h3>Collaborative process</h3>
+              <p>
+                Clear communication and transparent milestones keep your team in
+                sync from kickoff to launch.
+              </p>
+            </article>
+            <article class="reason-card reveal reveal-delay-2">
+              <h3>Tailored builds at every stage</h3>
+              <p>
+                From strategy to final polish, each component is designed around
+                your market position.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="container about-layout">
+          <div class="about-copy reveal">
+            <p class="eyebrow">About Taylor's Tech Solutions</p>
+            <h2>Your digital build partner for standout brand experiences.</h2>
+            <p>
+              Taylor's Tech Solutions is a modern digital studio focused
+              exclusively on custom websites, custom mobile apps, and complete
+              web + app platforms.
+            </p>
+            <p>
+              We partner with ambitious businesses and brands that want more
+              than a basic site or off-the-shelf app. Our mission is to create
+              premium digital products that look sharper, perform better, and
+              move your business forward.
+            </p>
+          </div>
+          <aside class="about-panel reveal reveal-delay-1" aria-label="Studio highlights">
+            <div>
+              <p class="panel-kicker">Built for ambition</p>
+              <p>
+                We help teams launch elevated digital products that reflect
+                premium positioning and long-term growth.
+              </p>
+            </div>
+            <ul>
+              <li>Website Strategy + Build</li>
+              <li>Custom Mobile App Development</li>
+              <li>Unified Web + App Product Systems</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Testimonials</p>
+            <h2>Trusted by teams that value craft, clarity, and outcomes.</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal">
+              <blockquote>
+                Taylor's Tech Solutions delivered a website that instantly
+                elevated how our brand is perceived. The process was sharp,
+                organized, and genuinely collaborative.
+              </blockquote>
+              <p class="author">Avery Collins</p>
+              <p class="role">Marketing Director, Atrium Advisory</p>
+            </article>
+            <article class="testimonial-card reveal reveal-delay-1">
+              <blockquote>
+                The app experience feels premium in every detail. Communication
+                was clear, timelines were respected, and the final product made
+                a measurable impact for our team.
+              </blockquote>
+              <p class="author">Jordan Hayes</p>
+              <p class="role">Founder, PulseFlow</p>
+            </article>
+            <article class="testimonial-card reveal reveal-delay-2">
+              <blockquote>
+                They translated our vision into a complete web + app platform
+                that finally feels aligned with our growth stage. The execution
+                quality speaks for itself.
+              </blockquote>
+              <p class="author">Morgan Lee</p>
+              <p class="role">COO, Northline Studio</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" id="contact">
+        <div class="container">
+          <div class="final-cta-shell reveal">
+            <p class="eyebrow">Start the Next Build</p>
+            <h2>Ready for a website, app, or full digital platform that feels premium from day one?</h2>
+            <p>
+              Partner with Taylor's Tech Solutions to create a custom digital
+              experience that sets a higher standard for your brand.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:hello@taylorstechsolutions.com">Start Your Project</a>
+              <a class="btn btn-secondary" href="tel:+10000000000">Book a Call</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand brand-footer" href="#home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-text">Taylor's Tech Solutions</span>
+          </a>
+          <p class="footer-line">
+            Premium digital products for brands that expect more than ordinary.
+          </p>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <p class="footer-title">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@taylorstechsolutions.com">hello@taylorstechsolutions.com</a></li>
+            <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li>Chicago, Illinois</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">Social</p>
+          <ul class="footer-links social-links">
+            <li><a href="#" aria-label="LinkedIn placeholder">LinkedIn</a></li>
+            <li><a href="#" aria-label="Dribbble placeholder">Dribbble</a></li>
+            <li><a href="#" aria-label="Behance placeholder">Behance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; <span id="year"></span> Taylor's Tech Solutions. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
