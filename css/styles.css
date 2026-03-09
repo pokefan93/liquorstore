@@ -1226,21 +1226,32 @@ img {
 }
 
 .signal-intro {
-  max-width: 760px;
+  max-width: 720px;
+  display: grid;
+  justify-items: center;
   margin-inline: auto;
   margin-bottom: clamp(1.5rem, 3vw, 2.4rem);
   text-align: center;
 }
 
+.signal-intro .eyebrow {
+  width: 100%;
+  text-align: center;
+}
+
 .signal-intro h2 {
-  max-width: 16ch;
+  width: 100%;
+  max-width: none;
   margin-inline: auto;
+  text-align: center;
 }
 
 .signal-intro p:last-child {
   margin-top: 1rem;
-  max-width: 58ch;
+  width: min(100%, 34ch);
+  max-width: none;
   margin-inline: auto;
+  text-align: center;
 }
 
 .signal-story {
@@ -1626,9 +1637,11 @@ img {
 
 .choose-showcase {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(1.2rem, 3vw, 2.1rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 2.4vw, 1.6rem);
   align-items: stretch;
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .choose-feature {
@@ -1978,6 +1991,7 @@ img {
   min-height: 420px;
   display: grid;
   align-content: center;
+  justify-items: center;
   padding: clamp(1rem, 2.4vw, 1.35rem);
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.08), transparent 24%),
