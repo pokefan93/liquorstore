@@ -5,6 +5,7 @@ const anchorLinks = document.querySelectorAll('a[href^="#"]');
 const revealElements = document.querySelectorAll(".reveal");
 const parallaxRoot = document.querySelector("[data-parallax]");
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const rootNode = document.documentElement;
 
 const closeMenu = () => {
   if (!header || !menuToggle) {
@@ -46,8 +47,34 @@ const setScrolledState = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 18);
 };
 
+const setCyberState = () => {
+  if (!rootNode) {
+    return;
+  }
+
+  if (reduceMotionQuery.matches) {
+    rootNode.style.setProperty("--scroll-progress", "0");
+    rootNode.style.setProperty("--cyber-shift", "0px");
+    return;
+  }
+
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+
+  rootNode.style.setProperty("--scroll-progress", progress.toFixed(4));
+  rootNode.style.setProperty("--cyber-shift", `${Math.round(window.scrollY * 0.42)}px`);
+};
+
 setScrolledState();
-window.addEventListener("scroll", setScrolledState, { passive: true });
+setCyberState();
+window.addEventListener(
+  "scroll",
+  () => {
+    setScrolledState();
+    setCyberState();
+  },
+  { passive: true }
+);
 
 const smoothScrollToSection = (event, target) => {
   const targetElement = document.querySelector(target);
