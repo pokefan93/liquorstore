@@ -6,6 +6,9 @@ const revealElements = document.querySelectorAll(".reveal");
 const parallaxRoot = document.querySelector("[data-parallax]");
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const rootNode = document.documentElement;
+const starfieldRoot = document.querySelector("[data-starfield]");
+const starsLayer = document.querySelector("[data-stars-layer]");
+const shootingLayer = document.querySelector("[data-shooting-layer]");
 
 const closeMenu = () => {
   if (!header || !menuToggle) {
@@ -80,8 +83,93 @@ const setCyberState = () => {
   rootNode.style.setProperty("--cyber-opacity", (0.12 + progress * 0.08).toFixed(3));
 };
 
+const randomInRange = (min, max) => min + Math.random() * (max - min);
+
+const initStarfield = () => {
+  if (!starfieldRoot || !starsLayer || !shootingLayer) {
+    return;
+  }
+
+  const saveDataEnabled = navigator.connection?.saveData ?? false;
+  const isCompactViewport = window.matchMedia("(max-width: 760px)").matches;
+  const starCount = saveDataEnabled ? 28 : isCompactViewport ? 42 : 74;
+  const starFragment = document.createDocumentFragment();
+
+  for (let index = 0; index < starCount; index += 1) {
+    const star = document.createElement("span");
+    const brightStar = Math.random() > 0.8;
+    const size = brightStar ? randomInRange(1.8, 3.2) : randomInRange(0.9, 2.1);
+
+    star.className = `starfield-star${brightStar ? " is-bright" : ""}`;
+    star.style.left = `${randomInRange(0, 100).toFixed(2)}%`;
+    star.style.top = `${randomInRange(0, 100).toFixed(2)}%`;
+    star.style.setProperty("--size", `${size.toFixed(2)}px`);
+    star.style.setProperty("--star-opacity", randomInRange(0.22, brightStar ? 0.92 : 0.66).toFixed(2));
+    star.style.setProperty("--twinkle-duration", `${randomInRange(3.8, 8.6).toFixed(2)}s`);
+    star.style.setProperty("--twinkle-delay", `${randomInRange(-8, 0).toFixed(2)}s`);
+    starFragment.appendChild(star);
+  }
+
+  starsLayer.replaceChildren(starFragment);
+
+  if (reduceMotionQuery.matches || saveDataEnabled) {
+    return;
+  }
+
+  let shootTimer = 0;
+
+  const scheduleShot = () => {
+    const delay = isCompactViewport ? randomInRange(4200, 7200) : randomInRange(2800, 5600);
+    shootTimer = window.setTimeout(spawnShot, delay);
+  };
+
+  const spawnShot = () => {
+    if (document.hidden) {
+      scheduleShot();
+      return;
+    }
+
+    const star = document.createElement("span");
+    const compact = window.matchMedia("(max-width: 760px)").matches;
+    const distance = compact ? randomInRange(180, 280) : randomInRange(280, 420);
+    const drop = distance * randomInRange(0.22, 0.34);
+
+    star.className = "shooting-star";
+    star.style.left = `${randomInRange(8, compact ? 58 : 76).toFixed(2)}%`;
+    star.style.top = `${randomInRange(4, compact ? 38 : 52).toFixed(2)}%`;
+    star.style.setProperty("--shoot-angle", `${randomInRange(14, 24).toFixed(2)}deg`);
+    star.style.setProperty("--shoot-distance", `${distance.toFixed(0)}px`);
+    star.style.setProperty("--shoot-drop", `${drop.toFixed(0)}px`);
+    star.style.setProperty("--shoot-duration", `${randomInRange(0.9, 1.5).toFixed(2)}s`);
+    star.style.setProperty("--shoot-length", `${randomInRange(120, compact ? 150 : 190).toFixed(0)}px`);
+
+    shootingLayer.appendChild(star);
+
+    window.setTimeout(() => {
+      star.remove();
+    }, 1700);
+
+    scheduleShot();
+  };
+
+  scheduleShot();
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      window.clearTimeout(shootTimer);
+      shootTimer = 0;
+      return;
+    }
+
+    if (!shootTimer) {
+      scheduleShot();
+    }
+  });
+};
+
 setScrolledState();
 setCyberState();
+initStarfield();
 window.addEventListener(
   "scroll",
   () => {
