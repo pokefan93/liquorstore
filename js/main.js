@@ -1,5 +1,6 @@
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
+const navShell = document.querySelector(".nav-shell");
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 const revealElements = document.querySelectorAll(".reveal");
 const parallaxRoot = document.querySelector("[data-parallax]");
@@ -20,8 +21,18 @@ if (menuToggle && header) {
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
+  document.addEventListener("click", (event) => {
+    if (!header.classList.contains("menu-open")) {
+      return;
+    }
+
+    if (navShell && !navShell.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 980) {
       closeMenu();
     }
   });
@@ -40,13 +51,15 @@ window.addEventListener("scroll", setScrolledState, { passive: true });
 
 const smoothScrollToSection = (event, target) => {
   const targetElement = document.querySelector(target);
+
   if (!targetElement) {
     return;
   }
 
   event.preventDefault();
 
-  const offset = header ? header.offsetHeight + 10 : 0;
+  const shouldOffset = target !== "#main-content";
+  const offset = shouldOffset && header ? header.offsetHeight + 10 : 0;
   const y = targetElement.getBoundingClientRect().top + window.scrollY - offset;
 
   window.scrollTo({
@@ -58,7 +71,7 @@ const smoothScrollToSection = (event, target) => {
 
   if (target === "#home") {
     history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-  } else {
+  } else if (target !== "#main-content") {
     history.replaceState(null, "", target);
   }
 };
@@ -66,6 +79,7 @@ const smoothScrollToSection = (event, target) => {
 anchorLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     const target = link.getAttribute("href");
+
     if (!target || target === "#") {
       return;
     }
@@ -89,7 +103,7 @@ if (reduceMotionQuery.matches) {
       });
     },
     {
-      threshold: 0.18,
+      threshold: 0.2,
       rootMargin: "0px 0px -40px",
     }
   );
@@ -114,6 +128,7 @@ if (parallaxRoot && !reduceMotionQuery.matches) {
 }
 
 const yearNode = document.getElementById("year");
+
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
 }
