@@ -273,8 +273,6 @@ if (section && shell && canvas && stageViewport) {
       const links = new THREE.LineSegments(linkGeometry, linkMaterial);
       world.add(links);
 
-      shell.classList.add("is-webgl-ready");
-
       const resize = () => {
         const { width, height } = stageViewport.getBoundingClientRect();
         const safeWidth = Math.max(width, 1);
@@ -292,6 +290,18 @@ if (section && shell && canvas && stageViewport) {
       let currentProgress = targetProgress;
       let inView = false;
       let frameId = 0;
+      let hasRenderedFrame = false;
+
+      const setWebGLState = (enabled) => {
+        shell.classList.toggle("is-webgl-ready", enabled);
+      };
+
+      const stopRender = () => {
+        if (frameId) {
+          window.cancelAnimationFrame(frameId);
+          frameId = 0;
+        }
+      };
 
       const render = (time = 0) => {
         if (!inView || document.hidden) {
@@ -306,13 +316,13 @@ if (section && shell && canvas && stageViewport) {
         const t = time * 0.001;
         const reveal = ease(mapRange(currentProgress, 0.02, 0.28));
         const orbit = ease(mapRange(currentProgress, 0.18, 0.58));
-        const brand = ease(mapRange(currentProgress, 0.42, 0.78));
-        const sync = ease(mapRange(currentProgress, 0.62, 0.92));
+        const brand = ease(mapRange(currentProgress, 0.14, 0.56));
+        const sync = ease(mapRange(currentProgress, 0.48, 0.86));
         const settle = ease(mapRange(currentProgress, 0.84, 1));
 
         world.rotation.x = 0.18 - currentProgress * 0.12 + Math.sin(t * 0.45) * 0.02;
         world.rotation.y = -0.28 + currentProgress * 0.82 + Math.sin(t * 0.28) * 0.05;
-        world.position.y = Math.sin(t * 0.9) * 0.06 - brand * 0.12;
+        world.position.y = Math.sin(t * 0.9) * 0.06 - brand * 0.08;
 
         camera.position.z = 8.8 - brand * 1.45 - settle * 0.32;
         camera.position.y = 0.3 - settle * 0.12;
@@ -348,19 +358,25 @@ if (section && shell && canvas && stageViewport) {
         particles.scale.setScalar(0.82 + reveal * 0.28 + orbit * 0.12);
         particlesMaterial.opacity = 0.06 + reveal * 0.12 + orbit * 0.16 - settle * 0.04;
 
-        plaqueGroup.position.set(0, 0.78 - brand * 0.7, -0.2 + brand * 0.98);
-        plaqueGroup.rotation.x = 0.98 - brand * 0.96 + settle * 0.06;
-        plaqueGroup.rotation.y = -1.08 + brand * 1.02 + settle * 0.24;
-        plaqueGroup.scale.setScalar(0.42 + brand * 0.92 + settle * 0.03);
-        plaqueBody.material.opacity = 0.12 + brand * 0.8;
+        plaqueGroup.position.set(0.18 - brand * 0.1, 0.34 - brand * 0.22, 0.06 + brand * 0.72);
+        plaqueGroup.rotation.x = 0.62 - brand * 0.58 + settle * 0.06;
+        plaqueGroup.rotation.y = -0.72 + brand * 0.62 + settle * 0.18;
+        plaqueGroup.rotation.z = -0.08 + brand * 0.08;
+        plaqueGroup.scale.setScalar(0.58 + brand * 0.78 + settle * 0.03);
+        plaqueBody.material.opacity = 0.2 + brand * 0.72;
         plaqueBody.material.emissiveIntensity = 0.06 + brand * 0.12 + settle * 0.12;
-        logoMaterial.opacity = 0.04 + brand * 0.96;
-        logoGlowMaterial.opacity = 0.02 + brand * 0.18 + settle * 0.06;
+        logoMaterial.opacity = 0.16 + brand * 0.8;
+        logoGlowMaterial.opacity = 0.06 + brand * 0.14 + settle * 0.05;
 
         links.scale.setScalar(0.2 + sync * 0.8);
         linkMaterial.opacity = 0.03 + sync * 0.48 - settle * 0.04;
 
         renderer.render(scene, camera);
+
+        if (!hasRenderedFrame) {
+          hasRenderedFrame = true;
+          setWebGLState(true);
+        }
       };
 
       const startRender = () => {
@@ -392,16 +408,26 @@ if (section && shell && canvas && stageViewport) {
         }
       });
 
+      canvas.addEventListener(
+        "webglcontextlost",
+        (event) => {
+          event.preventDefault();
+          stopRender();
+          hasRenderedFrame = false;
+          setWebGLState(false);
+        },
+        { passive: false }
+      );
+
       if (typeof reduceMotionQuery.addEventListener === "function") {
         reduceMotionQuery.addEventListener("change", (event) => {
           if (event.matches) {
             observer.disconnect();
             resizeObserver.disconnect();
-            if (frameId) {
-              window.cancelAnimationFrame(frameId);
-            }
+            stopRender();
             renderer.dispose();
-            shell.classList.remove("is-webgl-ready");
+            hasRenderedFrame = false;
+            setWebGLState(false);
           }
         });
       }
