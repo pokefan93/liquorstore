@@ -45,13 +45,18 @@ if (section && shell && canvas && stageViewport) {
     return clamp(-rect.top / total);
   };
 
-  const getVisualProgress = (progress) => {
-    const multiplier = stackedLayoutQuery.matches ? 2.05 : 1.45;
-    const lead = stackedLayoutQuery.matches ? 0.04 : 0.02;
-    return clamp(progress * multiplier + lead);
+  const getVisualProgress = () => {
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const stageHeight = Math.max(stageViewport.getBoundingClientRect().height, 1);
+    const visualStart = sectionTop - window.innerHeight * 0.18;
+    const visualDistance = stackedLayoutQuery.matches
+      ? Math.max(window.innerHeight * 0.58, stageHeight * 1.05)
+      : Math.max(window.innerHeight * 0.86, stageHeight * 1.02);
+
+    return clamp((window.scrollY - visualStart) / visualDistance);
   };
 
-  let targetProgress = getVisualProgress(getScrollProgress());
+  let targetProgress = getVisualProgress();
   let contentProgress = getScrollProgress();
 
   const syncContentState = (progress, visualProgress) => {
@@ -71,7 +76,7 @@ if (section && shell && canvas && stageViewport) {
   const bindScrollState = () => {
     const update = () => {
       contentProgress = getScrollProgress();
-      targetProgress = getVisualProgress(contentProgress);
+      targetProgress = getVisualProgress();
       syncContentState(contentProgress, targetProgress);
     };
 
@@ -122,6 +127,7 @@ if (section && shell && canvas && stageViewport) {
         clearcoatRoughness: 0.14,
         transparent: true,
         opacity: 0.96,
+        depthWrite: false,
       });
       const core = new THREE.Mesh(coreGeometry, coreMaterial);
       world.add(core);
@@ -332,69 +338,69 @@ if (section && shell && canvas && stageViewport) {
         currentProgress += (targetProgress - currentProgress) * 0.08;
 
         const t = time * 0.001;
-        const reveal = ease(mapRange(currentProgress, 0.02, 0.22));
-        const orbit = ease(mapRange(currentProgress, 0.12, 0.42));
-        const brand = ease(mapRange(currentProgress, 0.16, 0.44));
-        const sync = ease(mapRange(currentProgress, 0.34, 0.7));
-        const settle = ease(mapRange(currentProgress, 0.64, 1));
+        const reveal = ease(mapRange(currentProgress, 0.01, 0.14));
+        const orbit = ease(mapRange(currentProgress, 0.06, 0.2));
+        const brand = ease(mapRange(currentProgress, 0.09, 0.26));
+        const sync = ease(mapRange(currentProgress, 0.22, 0.42));
+        const settle = ease(mapRange(currentProgress, 0.4, 0.72));
 
         world.rotation.x = 0.18 - currentProgress * 0.12 + Math.sin(t * 0.45) * 0.02;
         world.rotation.y = -0.28 + currentProgress * 0.82 + Math.sin(t * 0.28) * 0.05;
-        world.position.y = Math.sin(t * 0.9) * 0.06 - brand * 0.08;
+        world.position.y = Math.sin(t * 0.9) * 0.04 - brand * 0.04;
 
         camera.position.z = 8.8 - brand * 1.45 - settle * 0.32;
         camera.position.y = 0.3 - settle * 0.12;
         camera.lookAt(0, 0, 0);
 
-        const coreScale = 0.28 + reveal * 0.82 - brand * 0.54 + settle * 0.03;
+        const coreScale = (0.22 + reveal * 0.66 + orbit * 0.12) * (1 - brand * 0.9) + 0.05;
         core.scale.setScalar(coreScale);
         core.rotation.x = t * 0.5 + currentProgress * 1.8;
         core.rotation.y = t * 0.35 + currentProgress * 1.2;
-        core.position.z = -brand * 0.95;
+        core.position.z = -0.08 - brand * 1.45;
         coreMaterial.emissiveIntensity = 0.14 + orbit * 0.58 + settle * 0.2;
-        coreMaterial.opacity = 0.96 - brand * 0.56;
+        coreMaterial.opacity = 0.54 - brand * 0.46;
 
-        glow.scale.setScalar(0.26 + reveal * 0.86 + orbit * 0.06 - brand * 0.42);
-        glow.position.z = -0.24 - brand * 1.05;
-        glowMaterial.opacity = 0.03 + reveal * 0.12 + orbit * 0.05 - brand * 0.1;
+        glow.scale.setScalar((0.22 + reveal * 0.72 + orbit * 0.05) * (1 - brand * 0.92) + 0.02);
+        glow.position.z = -0.24 - brand * 1.65;
+        glowMaterial.opacity = Math.max(0, 0.02 + reveal * 0.08 + orbit * 0.04 - brand * 0.11);
 
         shellMesh.scale.setScalar(0.2 + reveal * 1.42 + orbit * 0.24);
         shellMesh.rotation.x = -t * 0.2 + orbit * 0.2;
         shellMesh.rotation.y = t * 0.16 + currentProgress * 1.15;
-        shellMesh.position.z = -brand * 0.4;
-        shellMaterial.opacity = 0.06 + reveal * 0.22 + orbit * 0.1 - brand * 0.08 - settle * 0.06;
+        shellMesh.position.z = -0.12 - brand * 0.92;
+        shellMaterial.opacity = Math.max(0, 0.04 + reveal * 0.16 + orbit * 0.08 - brand * 0.12 - settle * 0.04);
 
         rings.scale.setScalar(0.35 + orbit * 0.92 + sync * 0.08);
         rings.rotation.z = t * 0.08 + currentProgress * 0.45;
-        rings.position.z = -brand * 0.28;
+        rings.position.z = -0.1 - brand * 0.8;
         ringA.rotation.z = t * 0.22 + orbit * 0.85;
         ringB.rotation.z = 0.78 - t * 0.17 - currentProgress * 0.65;
         ringC.rotation.z = -0.54 + t * 0.12 + orbit * 0.52;
-        ringMaterials[0].opacity = 0.04 + orbit * 0.24 + sync * 0.08 - brand * 0.08 - settle * 0.08;
-        ringMaterials[1].opacity = 0.03 + orbit * 0.19 + sync * 0.06 - brand * 0.06 - settle * 0.06;
-        ringMaterials[2].opacity = 0.02 + orbit * 0.14 + sync * 0.05 - brand * 0.05 - settle * 0.05;
-        nodeMaterial.opacity = 0.08 + orbit * 0.54 - brand * 0.1 - settle * 0.08;
+        ringMaterials[0].opacity = Math.max(0, 0.02 + orbit * 0.15 + sync * 0.06 - brand * 0.16);
+        ringMaterials[1].opacity = Math.max(0, 0.015 + orbit * 0.11 + sync * 0.04 - brand * 0.12);
+        ringMaterials[2].opacity = Math.max(0, 0.01 + orbit * 0.08 + sync * 0.03 - brand * 0.09);
+        nodeMaterial.opacity = Math.max(0, 0.04 + orbit * 0.3 - brand * 0.22);
         nodeGroup.rotation.z = -t * 0.24 + currentProgress * 0.4;
 
         particles.rotation.y = t * 0.08 + currentProgress * 0.74;
         particles.rotation.x = 0.62 + t * 0.04;
-        particles.position.z = -brand * 0.24;
+        particles.position.z = -0.08 - brand * 0.5;
         particles.scale.setScalar(0.82 + reveal * 0.28 + orbit * 0.12);
-        particlesMaterial.opacity = 0.04 + reveal * 0.1 + orbit * 0.12 - brand * 0.05 - settle * 0.03;
+        particlesMaterial.opacity = Math.max(0, 0.03 + reveal * 0.07 + orbit * 0.08 - brand * 0.08);
 
-        plaqueGroup.position.set(0.16 - brand * 0.08, 0.28 - brand * 0.16, 0.22 + brand * 1.26);
-        plaqueGroup.rotation.x = 0.5 - brand * 0.48 + settle * 0.05;
-        plaqueGroup.rotation.y = -0.54 + brand * 0.44 + settle * 0.14;
-        plaqueGroup.rotation.z = -0.08 + brand * 0.08;
-        plaqueGroup.scale.setScalar(0.72 + brand * 0.68 + settle * 0.03);
-        plaqueBody.material.opacity = 0.28 + brand * 0.68;
+        plaqueGroup.position.set(0.08 - brand * 0.04, 0.12 - brand * 0.08, 0.88 + brand * 2.24);
+        plaqueGroup.rotation.x = 0.22 - brand * 0.16 + settle * 0.02;
+        plaqueGroup.rotation.y = -0.18 + brand * 0.14 + settle * 0.04;
+        plaqueGroup.rotation.z = -0.03 + brand * 0.03;
+        plaqueGroup.scale.setScalar(1.02 + brand * 0.46 + settle * 0.02);
+        plaqueBody.material.opacity = 0.38 + brand * 0.58;
         plaqueBody.material.emissiveIntensity = 0.06 + brand * 0.12 + settle * 0.12;
-        logoMaterial.opacity = 0.24 + brand * 0.76;
-        logoGlowMaterial.opacity = 0.08 + brand * 0.12 + settle * 0.05;
+        logoMaterial.opacity = 0.48 + brand * 0.5;
+        logoGlowMaterial.opacity = 0.1 + brand * 0.08 + settle * 0.04;
 
         links.scale.setScalar(0.2 + sync * 0.8);
-        links.position.z = -brand * 0.42;
-        linkMaterial.opacity = 0.02 + sync * 0.32 - brand * 0.03 - settle * 0.03;
+        links.position.z = -0.16 - brand * 0.88;
+        linkMaterial.opacity = Math.max(0, 0.01 + sync * 0.18 - brand * 0.08);
 
         renderer.render(scene, camera);
 

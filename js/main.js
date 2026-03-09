@@ -118,6 +118,27 @@ const initStarfield = () => {
 
   let shootTimer = 0;
 
+  const pickShotProfile = (compact) => {
+    const profiles = compact
+      ? [
+          { left: [4, 26], top: [6, 24], angle: [14, 24], travel: 1, distance: [160, 230], drop: [0.18, 0.28] },
+          { left: [24, 52], top: [4, 18], angle: [12, 20], travel: 1, distance: [180, 250], drop: [0.2, 0.3] },
+          { left: [56, 92], top: [6, 24], angle: [-24, -14], travel: -1, distance: [160, 230], drop: [0.18, 0.28] },
+          { left: [10, 30], top: [24, 58], angle: [8, 16], travel: 1, distance: [140, 210], drop: [0.14, 0.24] },
+          { left: [70, 94], top: [24, 58], angle: [-16, -8], travel: -1, distance: [140, 210], drop: [0.14, 0.24] },
+        ]
+      : [
+          { left: [3, 24], top: [4, 22], angle: [14, 24], travel: 1, distance: [260, 380], drop: [0.18, 0.28] },
+          { left: [22, 56], top: [3, 16], angle: [12, 20], travel: 1, distance: [300, 420], drop: [0.2, 0.3] },
+          { left: [44, 78], top: [4, 18], angle: [-20, -12], travel: -1, distance: [300, 420], drop: [0.2, 0.3] },
+          { left: [74, 97], top: [4, 22], angle: [-24, -14], travel: -1, distance: [260, 380], drop: [0.18, 0.28] },
+          { left: [6, 22], top: [22, 66], angle: [7, 15], travel: 1, distance: [220, 320], drop: [0.14, 0.24] },
+          { left: [78, 96], top: [22, 66], angle: [-15, -7], travel: -1, distance: [220, 320], drop: [0.14, 0.24] },
+        ];
+
+    return profiles[Math.floor(Math.random() * profiles.length)];
+  };
+
   const scheduleShot = () => {
     const delay = isCompactViewport ? randomInRange(4200, 7200) : randomInRange(2800, 5600);
     shootTimer = window.setTimeout(spawnShot, delay);
@@ -131,13 +152,14 @@ const initStarfield = () => {
 
     const star = document.createElement("span");
     const compact = window.matchMedia("(max-width: 760px)").matches;
-    const distance = compact ? randomInRange(180, 280) : randomInRange(280, 420);
-    const drop = distance * randomInRange(0.22, 0.34);
+    const profile = pickShotProfile(compact);
+    const distance = randomInRange(profile.distance[0], profile.distance[1]) * profile.travel;
+    const drop = Math.abs(distance) * randomInRange(profile.drop[0], profile.drop[1]);
 
     star.className = "shooting-star";
-    star.style.left = `${randomInRange(8, compact ? 58 : 76).toFixed(2)}%`;
-    star.style.top = `${randomInRange(4, compact ? 38 : 52).toFixed(2)}%`;
-    star.style.setProperty("--shoot-angle", `${randomInRange(14, 24).toFixed(2)}deg`);
+    star.style.left = `${randomInRange(profile.left[0], profile.left[1]).toFixed(2)}%`;
+    star.style.top = `${randomInRange(profile.top[0], profile.top[1]).toFixed(2)}%`;
+    star.style.setProperty("--shoot-angle", `${randomInRange(profile.angle[0], profile.angle[1]).toFixed(2)}deg`);
     star.style.setProperty("--shoot-distance", `${distance.toFixed(0)}px`);
     star.style.setProperty("--shoot-drop", `${drop.toFixed(0)}px`);
     star.style.setProperty("--shoot-duration", `${randomInRange(0.9, 1.5).toFixed(2)}s`);
