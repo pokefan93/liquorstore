@@ -36,6 +36,8 @@ if (menuToggle && header) {
     if (window.innerWidth > 980) {
       closeMenu();
     }
+
+    setCyberState();
   });
 }
 
@@ -53,16 +55,29 @@ const setCyberState = () => {
   }
 
   if (reduceMotionQuery.matches) {
-    rootNode.style.setProperty("--scroll-progress", "0");
-    rootNode.style.setProperty("--cyber-shift", "0px");
+    rootNode.style.setProperty("--cyber-shift-a", "0px");
+    rootNode.style.setProperty("--cyber-shift-b", "0px");
+    rootNode.style.setProperty("--cyber-shift-c", "0px");
+    rootNode.style.setProperty("--cyber-shift-d", "0px");
+    rootNode.style.setProperty("--cyber-shift-e", "0px");
+    rootNode.style.setProperty("--cyber-shift-f", "0px");
+    rootNode.style.setProperty("--cyber-shift-g", "0px");
+    rootNode.style.setProperty("--cyber-opacity", "0.06");
     return;
   }
 
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+  const scrollY = window.scrollY;
 
-  rootNode.style.setProperty("--scroll-progress", progress.toFixed(4));
-  rootNode.style.setProperty("--cyber-shift", `${Math.round(window.scrollY * 0.42)}px`);
+  rootNode.style.setProperty("--cyber-shift-a", `${Math.round(scrollY * -0.16)}px`);
+  rootNode.style.setProperty("--cyber-shift-b", `${Math.round(scrollY * 0.12)}px`);
+  rootNode.style.setProperty("--cyber-shift-c", `${Math.round(scrollY * 0.18)}px`);
+  rootNode.style.setProperty("--cyber-shift-d", `${Math.round(scrollY * -0.1)}px`);
+  rootNode.style.setProperty("--cyber-shift-e", `${Math.round(scrollY * -0.12)}px`);
+  rootNode.style.setProperty("--cyber-shift-f", `${Math.round(scrollY * 0.08)}px`);
+  rootNode.style.setProperty("--cyber-shift-g", `${Math.round(scrollY * 0.14)}px`);
+  rootNode.style.setProperty("--cyber-opacity", (0.12 + progress * 0.08).toFixed(3));
 };
 
 setScrolledState();
@@ -152,6 +167,10 @@ if (parallaxRoot && !reduceMotionQuery.matches) {
     parallaxRoot.style.setProperty("--pointer-x", "0px");
     parallaxRoot.style.setProperty("--pointer-y", "0px");
   });
+}
+
+if (typeof reduceMotionQuery.addEventListener === "function") {
+  reduceMotionQuery.addEventListener("change", setCyberState);
 }
 
 const yearNode = document.getElementById("year");
