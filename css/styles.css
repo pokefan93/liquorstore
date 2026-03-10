@@ -445,6 +445,7 @@ select {
 .hero-quote-band {
   max-width: 34rem;
   margin: 1rem auto 0.9rem;
+  padding: 0.55rem 0;
   text-align: center;
 }
 
