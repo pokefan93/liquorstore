@@ -1,9 +1,5 @@
 const root = document.documentElement;
-const body = document.body;
 const header = document.querySelector("[data-header]");
-const menuToggle = document.querySelector("[data-menu-toggle]");
-const siteNav = document.querySelector(".site-nav");
-const navLinks = document.querySelectorAll(".site-nav a");
 const openTodayNode = document.querySelector("[data-open-today]");
 const revealNodes = document.querySelectorAll("[data-reveal]");
 const yearNode = document.querySelector("[data-year]");
@@ -19,16 +15,6 @@ const weeklyHours = {
   Thursday: "Open today: 10 AM - 9 PM",
   Friday: "Open today: 10 AM - 9 PM",
   Saturday: "Open today: 10 AM - 9 PM",
-};
-
-const closeMenu = () => {
-  if (!header || !menuToggle) {
-    return;
-  }
-
-  header.classList.remove("menu-open");
-  body.classList.remove("menu-open");
-  menuToggle.setAttribute("aria-expanded", "false");
 };
 
 const setOpenToday = () => {
@@ -108,42 +94,6 @@ const syncFacebookEmbed = () => {
   facebookEmbed.width = String(nextWidth);
   facebookEmbed.src = embedUrl.toString();
 };
-
-if (menuToggle && header && siteNav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = header.classList.toggle("menu-open");
-    body.classList.toggle("menu-open", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!header.classList.contains("menu-open")) {
-      return;
-    }
-
-    if (!header.contains(event.target)) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 959) {
-      closeMenu();
-    }
-  });
-}
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
