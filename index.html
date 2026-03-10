@@ -27,17 +27,56 @@
 
     <div class="utility-bar">
       <div class="container utility-inner">
-        <a
-          class="utility-link"
-          href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
-          target="_blank"
-          rel="noreferrer"
-        >
-          31 Cunningham Corner, Bella Vista, AR 72714
-        </a>
-        <a class="utility-link utility-link-phone" href="tel:+14798762220">(479) 876-2220</a>
-        <p class="utility-status" data-open-today aria-live="polite">Open today: Call for hours</p>
-        <p class="utility-note">Local shop, regular tastings, and drive-thru convenience.</p>
+        <div class="utility-primary">
+          <a
+            class="utility-link"
+            href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
+            target="_blank"
+            rel="noreferrer"
+          >
+            31 Cunningham Corner, Bella Vista, AR 72714
+          </a>
+          <a class="utility-link utility-link-phone" href="tel:+14798762220">(479) 876-2220</a>
+          <p class="utility-status" data-open-today aria-live="polite">Open today: Call for hours</p>
+        </div>
+
+        <div class="utility-secondary">
+          <p class="utility-note">Tasting classes, local picks, and drive-thru convenience.</p>
+
+          <div class="social-follow social-follow-utility" aria-label="Follow Bella Vista Wine &amp; Spirits">
+            <a
+              class="social-icon-link"
+              href="https://www.facebook.com/VillagePeopleLiquor/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Follow Bella Vista Wine &amp; Spirits on Facebook"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.1-.1-2.2-.1-2.2 0-3.8 1.3-3.8 3.9v1.9H8v2.8h2.4v7h3.1Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="sr-only">Facebook</span>
+            </a>
+
+            <a
+              class="social-icon-link"
+              href="https://www.instagram.com/bvwineandspirits/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Follow Bella Vista Wine &amp; Spirits on Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7.5 3h9c2.5 0 4.5 2 4.5 4.5v9c0 2.5-2 4.5-4.5 4.5h-9C5 21 3 19 3 16.5v-9C3 5 5 3 7.5 3Zm-.1 1.8A2.7 2.7 0 0 0 4.8 7.4v9.2a2.7 2.7 0 0 0 2.6 2.6h9.2a2.7 2.7 0 0 0 2.6-2.6V7.4a2.7 2.7 0 0 0-2.6-2.6H7.4Zm9.7 1.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.6a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 1.8a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -75,7 +114,7 @@
         <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="#top">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
+            <li><a href="#facebook">Updates</a></li>
             <li><a href="#events">Tastings &amp; Events</a></li>
             <li><a href="#picks">Staff Picks</a></li>
             <li><a href="#gifts">Gifts &amp; Parties</a></li>
@@ -94,18 +133,17 @@
             <p class="eyebrow">Modern local bottle shop in Bella Vista</p>
             <h1>Good bottles. Helpful people. Right here in Bella Vista.</h1>
             <p class="hero-text">
-              Wine, spirits, beer, gifts, and quick recommendations for dinner, weekends,
-              celebrations, and last-minute stops. We keep the shelves strong and the advice
-              simple.
+              Convenience and connoisseurship all in one place, with beer, wine, liquor, tasting
+              classes, and a drive-thru that makes local stops easy.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-solid" href="#shop">Shop by Category</a>
+              <a class="btn btn-solid" href="#events">See Tastings &amp; Events</a>
               <a class="btn btn-outline" href="#visit">Hours &amp; Directions</a>
             </div>
             <ul class="hero-points">
-              <li>Wine, whiskey, beer, and solid weeknight picks</li>
+              <li>Beer, wine, liquor, and strong everyday recommendations</li>
               <li>Helpful staff and a drive-thru window when time is tight</li>
-              <li>Tastings and seasonal events that feel local, not stuffy</li>
+              <li>Tasting classes and store events that feel local, not stuffy</li>
             </ul>
           </div>
 
@@ -160,6 +198,11 @@
               seasonal displays, and everyday store updates. This gives the homepage some life right
               near the top without adding any backend complexity.
             </p>
+
+            <blockquote class="bio-quote">
+              &ldquo;Convenience and connoisseurship all in one place -- we&rsquo;re taking beer, wine,
+              and liquor to the next level with our tasting classes and drive-thru.&rdquo;
+            </blockquote>
 
             <div class="social-actions">
               <a
@@ -224,6 +267,73 @@
               </a>
               .
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mascot">
+        <div class="container mascot-layout">
+          <figure class="mascot-photo" data-reveal>
+            <img
+              src="assets/weller.jpg"
+              alt="Weller, the Bella Vista Wine &amp; Spirits mascot, sitting in the store."
+              width="1440"
+              height="1800"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="mascot-copy" data-reveal>
+            <p class="eyebrow">Meet Weller</p>
+            <h2>The store mascot with a bottle-shop point of view.</h2>
+            <p>
+              Weller gives the place some real local personality. He&rsquo;s part of what keeps Bella
+              Vista Wine &amp; Spirits feeling friendly, grounded, and like an actual neighborhood
+              stop instead of a generic chain shelf.
+            </p>
+
+            <div class="mascot-notes">
+              <article class="mascot-note">
+                <strong>Neighborhood energy</strong>
+                <p>Weller shows up in store photos and helps the place feel warm, familiar, and local.</p>
+              </article>
+              <article class="mascot-note">
+                <strong>Worth following</strong>
+                <p>Facebook and Instagram are the best places to catch Weller, tastings, and new arrivals.</p>
+              </article>
+            </div>
+
+            <div class="social-follow social-follow-text" aria-label="Follow Bella Vista Wine &amp; Spirits">
+              <a
+                class="social-link-pill"
+                href="https://www.facebook.com/VillagePeopleLiquor/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.1-.1-2.2-.1-2.2 0-3.8 1.3-3.8 3.9v1.9H8v2.8h2.4v7h3.1Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Follow on Facebook</span>
+              </a>
+
+              <a
+                class="social-link-pill"
+                href="https://www.instagram.com/bvwineandspirits/?hl=en"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7.5 3h9c2.5 0 4.5 2 4.5 4.5v9c0 2.5-2 4.5-4.5 4.5h-9C5 21 3 19 3 16.5v-9C3 5 5 3 7.5 3Zm-.1 1.8A2.7 2.7 0 0 0 4.8 7.4v9.2a2.7 2.7 0 0 0 2.6 2.6h9.2a2.7 2.7 0 0 0 2.6-2.6V7.4a2.7 2.7 0 0 0-2.6-2.6H7.4Zm9.7 1.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.6a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 1.8a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Follow on Instagram</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -312,85 +422,6 @@
                 Easy parking, fast checkout, and a drive-thru window for busy evenings and pickup on
                 the way home.
               </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="shop">
-        <div class="container">
-          <div class="section-heading section-heading-light" data-reveal>
-            <p class="eyebrow">Shop by category</p>
-            <h2>Start with the shelf you already know you need.</h2>
-            <p>
-              Full shop pages can come next. For now, this homepage points people to the main
-              categories they&rsquo;ll expect in the store.
-            </p>
-          </div>
-
-          <div class="category-grid">
-            <article
-              class="category-card category-card-wide"
-              data-reveal
-              style="--card-image: url('assets/interior-aisle.jpg'); --card-position: center 45%;"
-            >
-              <p class="category-label">Wine</p>
-              <h3>Weeknight bottles to dinner-party standouts.</h3>
-              <p>Reds, whites, rose, sparkling, and reliable bottles that drink above their price.</p>
-            </article>
-            <article
-              class="category-card"
-              data-reveal
-              style="--card-image: url('assets/whiskey-gift.jpg'); --card-position: center center;"
-            >
-              <p class="category-label">Whiskey &amp; Bourbon</p>
-              <h3>Easy pours and gift-worthy bottles.</h3>
-              <p>From everyday pickup bottles to better gifts for birthdays, hosts, and holidays.</p>
-            </article>
-            <article
-              class="category-card"
-              data-reveal
-              style="--card-image: url('assets/spirits-shelf.jpg'); --card-position: center center;"
-            >
-              <p class="category-label">Tequila &amp; Mezcal</p>
-              <h3>Margarita staples and sipping upgrades.</h3>
-              <p>Bottles for casual taco night, porch drinks, and the people who know what they like.</p>
-            </article>
-            <article
-              class="category-card"
-              data-reveal
-              style="--card-image: url('assets/vodka-shelf.jpg'); --card-position: center center;"
-            >
-              <p class="category-label">Vodka, Gin &amp; Rum</p>
-              <h3>Solid staples for the home bar.</h3>
-              <p>Classic labels, cocktail standards, and a few better picks if you want to step it up.</p>
-            </article>
-            <article
-              class="category-card"
-              data-reveal
-              style="--card-image: url('assets/beer-stack.jpg'); --card-position: center center;"
-            >
-              <p class="category-label">Craft Beer</p>
-              <h3>Cooler-ready grabs and party stacks.</h3>
-              <p>Local favorites, national names, and quick pickup options for the weekend crowd.</p>
-            </article>
-            <article
-              class="category-card"
-              data-reveal
-              style="--card-image: url('assets/tasting-setup.jpg'); --card-position: center 35%;"
-            >
-              <p class="category-label">Ready-to-Drink</p>
-              <h3>Grab-and-go without overthinking it.</h3>
-              <p>Seltzers, canned cocktails, and easy options when convenience matters most.</p>
-            </article>
-            <article
-              class="category-card category-card-wide"
-              data-reveal
-              style="--card-image: url('assets/gift-display.jpg'); --card-position: center center;"
-            >
-              <p class="category-label">Gifts &amp; Party Picks</p>
-              <h3>Hostess bottles, mixers, and celebration help.</h3>
-              <p>Build a better dinner-party table or knock out a solid gift in one stop.</p>
             </article>
           </div>
         </div>
@@ -635,7 +666,6 @@
           <ul class="footer-nav">
             <li><a href="#top">Home</a></li>
             <li><a href="#facebook">Facebook</a></li>
-            <li><a href="#shop">Shop</a></li>
             <li><a href="#events">Tastings &amp; Events</a></li>
             <li><a href="#picks">Staff Picks</a></li>
             <li><a href="#gifts">Gifts &amp; Parties</a></li>
@@ -645,7 +675,38 @@
       </div>
 
       <div class="container footer-bottom">
-        <p>Static homepage build for Bella Vista Wine &amp; Spirits.</p>
+        <div class="social-follow social-follow-footer" aria-label="Follow Bella Vista Wine &amp; Spirits">
+          <a
+            class="social-icon-link"
+            href="https://www.facebook.com/VillagePeopleLiquor/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Follow Bella Vista Wine &amp; Spirits on Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.1-.1-2.2-.1-2.2 0-3.8 1.3-3.8 3.9v1.9H8v2.8h2.4v7h3.1Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span class="sr-only">Facebook</span>
+          </a>
+          <a
+            class="social-icon-link"
+            href="https://www.instagram.com/bvwineandspirits/?hl=en"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Follow Bella Vista Wine &amp; Spirits on Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7.5 3h9c2.5 0 4.5 2 4.5 4.5v9c0 2.5-2 4.5-4.5 4.5h-9C5 21 3 19 3 16.5v-9C3 5 5 3 7.5 3Zm-.1 1.8A2.7 2.7 0 0 0 4.8 7.4v9.2a2.7 2.7 0 0 0 2.6 2.6h9.2a2.7 2.7 0 0 0 2.6-2.6V7.4a2.7 2.7 0 0 0-2.6-2.6H7.4Zm9.7 1.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.6a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 1.8a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span class="sr-only">Instagram</span>
+          </a>
+        </div>
         <p>&copy; <span data-year></span> Bella Vista Wine &amp; Spirits</p>
       </div>
     </footer>
