@@ -680,6 +680,19 @@ select {
   padding-top: 0.15rem;
 }
 
+.facebook-card-actions .btn-solid {
+  color: var(--charcoal);
+  background: linear-gradient(135deg, #f4eadc 0%, #e9dcc9 100%);
+  border-color: rgba(45, 34, 31, 0.14);
+  box-shadow: 0 14px 28px rgba(33, 25, 23, 0.12);
+}
+
+.facebook-card-actions .btn-solid:hover,
+.facebook-card-actions .btn-solid:focus-visible {
+  border-color: rgba(45, 34, 31, 0.24);
+  box-shadow: 0 18px 34px rgba(33, 25, 23, 0.16);
+}
+
 .section-intro,
 .section-heading {
   max-width: 42rem;
@@ -1214,7 +1227,7 @@ select {
   }
 
   .footer-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .category-grid {
@@ -1232,6 +1245,35 @@ select {
 
   .split-layout-reverse {
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .visit .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 36rem);
+    gap: clamp(2rem, 4vw, 4.5rem);
+    align-items: start;
+  }
+
+  .visit .section-heading {
+    margin-bottom: 0;
+    max-width: 42rem;
+  }
+
+  .visit-grid-single {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: none;
+    width: 100%;
+    margin-inline: 0;
+    align-self: start;
+  }
+
+  .facebook-card-centered {
+    max-width: 38rem;
+  }
+
+  .facebook-frame {
+    max-width: 500px;
+    margin-inline: auto;
   }
 
   .drive-thru-card {
