@@ -1,47 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Taylor's Tech Solutions builds custom websites, mobile apps, and web plus app systems for modern businesses."
+      content="Bella Vista Wine &amp; Spirits is a helpful local bottle shop in Bella Vista, Arkansas for wine, whiskey, beer, gifts, tastings, and quick stop convenience."
     />
-    <meta name="theme-color" content="#050607" />
-    <title>Taylor's Tech Solutions | Custom Websites + Apps</title>
-    <link rel="icon" type="image/png" sizes="69x69" href="images/logo-icon.png" />
-    <link rel="apple-touch-icon" href="images/logo-icon.png" />
+    <meta name="theme-color" content="#2d221f" />
+    <title>Bella Vista Wine &amp; Spirits | Bella Vista, Arkansas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
+    <script>
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
-    <script type="module" src="js/signal-scene.js"></script>
   </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="starfield" data-starfield aria-hidden="true">
-      <div class="starfield-layer starfield-stars" data-stars-layer></div>
-      <div class="starfield-layer starfield-shooting" data-shooting-layer></div>
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <a
+          class="utility-link"
+          href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
+          target="_blank"
+          rel="noreferrer"
+        >
+          31 Cunningham Corner, Bella Vista, AR 72714
+        </a>
+        <a class="utility-link utility-link-phone" href="tel:+14798762220">(479) 876-2220</a>
+        <p class="utility-status" data-open-today aria-live="polite">Open today: Call for hours</p>
+        <p class="utility-note">Local shop, regular tastings, and drive-thru convenience.</p>
+      </div>
     </div>
 
-    <div class="bg-glow bg-glow-one" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow-two" aria-hidden="true"></div>
-
-    <header class="site-header" id="home" data-header>
-      <div class="container nav-shell">
-        <a class="brand" href="#home" aria-label="Taylor's Tech Solutions home">
-          <img
-            class="brand-logo"
-            src="images/logo-white.png"
-            alt=""
-            width="377"
-            height="73"
-          />
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Bella Vista Wine &amp; Spirits home">
+          <span class="brand-mark" aria-hidden="true">BV</span>
+          <span class="brand-copy">
+            <span class="brand-name">Bella Vista Wine &amp; Spirits</span>
+            <span class="brand-meta">Bella Vista, Arkansas</span>
+          </span>
         </a>
 
         <button
@@ -58,664 +65,486 @@
         </button>
 
         <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#process">Process</a></li>
+          <ul class="nav-list">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#events">Tastings &amp; Events</a></li>
+            <li><a href="#picks">Staff Picks</a></li>
+            <li><a href="#gifts">Gifts &amp; Parties</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#visit">Contact</a></li>
           </ul>
-
-          <div class="nav-cta">
-            <a class="btn btn-secondary" href="tel:+14792220182">Book a Call</a>
-            <a class="btn btn-primary" href="#contact">Start Your Project</a>
-          </div>
+          <a class="btn btn-solid nav-button" href="#visit">Visit the Store</a>
         </nav>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="section hero">
-        <div class="container hero-layout">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Custom Websites + Apps</p>
-            <h1>We build custom websites and apps that make your business stand out.</h1>
-            <p class="hero-subcopy">
-              Taylor's Tech Solutions builds custom websites, mobile apps, and web + app systems
-              that are clean, modern, and ready to launch.
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Modern local bottle shop in Bella Vista</p>
+            <h1>Good bottles. Helpful people. Right here in Bella Vista.</h1>
+            <p class="hero-text">
+              Wine, spirits, beer, gifts, and quick recommendations for dinner, weekends,
+              celebrations, and last-minute stops. We keep the shelves strong and the advice
+              simple.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Start Your Project</a>
-              <a class="btn btn-ghost" href="#work">View Featured Work</a>
+              <a class="btn btn-solid" href="#shop">Shop by Category</a>
+              <a class="btn btn-outline" href="#visit">Hours &amp; Directions</a>
             </div>
-            <p class="hero-note">Clear plan. Clean build. Easy process.</p>
+            <ul class="hero-points">
+              <li>Wine, whiskey, beer, and solid weeknight picks</li>
+              <li>Helpful staff and a drive-thru window when time is tight</li>
+              <li>Tastings and seasonal events that feel local, not stuffy</li>
+            </ul>
           </div>
 
-          <div class="hero-visual reveal reveal-delay-1" data-parallax>
-            <div class="hero-stage">
-              <article class="browser-mockup motion-layer" style="--depth: 0.45">
-                <div class="browser-topbar">
-                  <div class="browser-dots">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <p class="browser-url">taylorstechsolutions </p>
-                  <span class="browser-top-pill">Live</span>
-                </div>
-                <div class="browser-content">
-                  <div class="browser-hero-panel">
-                    <div class="browser-copy-stack">
-                      <div class="browser-line lg"></div>
-                      <div class="browser-line"></div>
-                      <div class="browser-line short"></div>
-                    </div>
-                    <div class="browser-preview-stack" aria-hidden="true">
-                      <div class="browser-preview-card browser-preview-card-tall"></div>
-                      <div class="browser-preview-card browser-preview-card-wide"></div>
-                      <div class="browser-preview-card browser-preview-card-accent"></div>
-                    </div>
-                  </div>
-                  <div class="browser-mini-metrics">
-                    <div>
-                      <strong>12</strong>
-                      <span>Screens</span>
-                    </div>
-                    <div>
-                      <strong>04</strong>
-                      <span>Flows</span>
-                    </div>
-                    <div>
-                      <strong>99%</strong>
-                      <span>Clarity</span>
-                    </div>
-                  </div>
-                  <div class="browser-cards">
-                    <div>
-                      <span>Responsive</span>
-                      <strong>Desktop to mobile</strong>
-                    </div>
-                    <div>
-                      <span>Conversion</span>
-                      <strong>Clear CTA flow</strong>
-                    </div>
-                    <div>
-                      <span>Brand System</span>
-                      <strong>Consistent visuals</strong>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <article class="phone-mockup motion-layer" style="--depth: 0.7" aria-label="App mockup">
-                <div class="phone-notch"></div>
-                <div class="phone-content">
-                  <div class="phone-top">
-                    <div class="phone-avatar" aria-hidden="true"></div>
-                    <div class="phone-top-copy">
-                      <div class="phone-line"></div>
-                      <div class="phone-line short"></div>
-                    </div>
-                  </div>
-                  <div class="phone-chart"></div>
-                  <div class="phone-stats">
-                    <div>
-                      <strong>4.9</strong>
-                      <span>Rating</span>
-                    </div>
-                    <div>
-                      <strong>24</strong>
-                      <span>Flows</span>
-                    </div>
-                  </div>
-                  <div class="phone-chip">Premium App UX</div>
-                </div>
-              </article>
-
-              <article class="insight-panel motion-layer" style="--depth: 0.55">
-                <p class="insight-label">Launch Your Site</p>
-                <div class="insight-score">
-                  <strong>100%</strong>
-                  <span>launch confidence</span>
-                </div>
-                <div class="insight-bars">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div class="insight-tags">
-                  <span>Full-Stack Dev</span>
-                  <span>App Syncs to Site</span>
-                </div>
-                <p class="insight-footer">Web + App Systems</p>
-              </article>
-
-              <article class="signal-card motion-layer" style="--depth: 0.62">
-                <p class="signal-kicker">Experience Layer</p>
-                <div class="signal-stack" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <p class="signal-copy">
-                  Polished motion, smart flow, and high-end interface detail built in from the
-                  start.
-                </p>
-              </article>
-
-              <article class="brand-signal motion-layer" style="--depth: 0.82">
-                <img
-                  class="brand-signal-logo"
-                  src="images/logo-white.png"
-                  alt=""
-                  width="377"
-                  height="73"
-                />
-                <p>Get a polished, launch-ready build that makes your business look amazing.</p>
-              </article>
-
-              <div class="floating-chip chip-left motion-layer" style="--depth: 0.9">Launch-Ready</div>
-              <div class="floating-chip chip-right motion-layer" style="--depth: 0.8">Live Motion</div>
+          <div class="hero-media" data-reveal>
+            <figure class="hero-card hero-card-main">
+              <img
+                src="assets/storefront.jpg"
+                alt="Front entrance of Bella Vista Wine &amp; Spirits."
+                width="1000"
+                height="652"
+                fetchpriority="high"
+              />
+            </figure>
+            <figure class="hero-card hero-card-accent">
+              <img
+                src="assets/tasting-setup.jpg"
+                alt="Tasting setup with sample pours at Bella Vista Wine &amp; Spirits."
+                width="800"
+                height="1000"
+              />
+            </figure>
+            <div class="hero-badge">
+              <span class="hero-badge-label">Worth the stop</span>
+              <strong>Wine, spirits, beer, gifts, and straightforward local help.</strong>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="trust-strip" aria-label="Studio value highlights">
-        <div class="container trust-items">
-          <p>Custom-built solutions</p>
-          <p>Modern design + full development</p>
-          <p>Polished UI and Designs</p>
-          <p>Collaborative process</p>
-          <p>SEO-Maxxed from Day 1</p>
-        </div>
-      </section>
-
-      <section
-        class="section signal-experience"
-        id="experience"
-        aria-labelledby="experience-title"
-        data-signal-section
-      >
-        <div class="container signal-intro reveal">
-          <p class="eyebrow">Custom Designs</p>
-          <h2 id="experience-title">You think it. We build it.</h2>
-          <p>
-            Call Taylor today to see how you can have a high-quality, professional site that meets and exceeds your expectations.
-          </p>
-        </div>
-
-        <div class="container signal-story">
-          <div class="signal-stage-column">
-            <div class="signal-stage-sticky reveal" data-signal-shell>
-              <div class="signal-stage-frame">
-                <div class="signal-stage-meta">
-                  <p class="signal-stage-label">3D DESIGNS</p>
-                  <p class="signal-stage-caption">AND MUCH MORE!</p>
-                </div>
-
-                <div class="signal-canvas-shell">
-                  <canvas
-                    class="signal-canvas"
-                    data-signal-canvas
-                    aria-hidden="true"
-                  ></canvas>
-
-                  <div class="signal-fallback" data-signal-fallback>
-                    <div class="signal-fallback-orbit signal-fallback-orbit-one" aria-hidden="true"></div>
-                    <div class="signal-fallback-orbit signal-fallback-orbit-two" aria-hidden="true"></div>
-                    <div class="signal-fallback-grid" aria-hidden="true"></div>
-                    <div class="signal-fallback-core" aria-hidden="true">
-                      <img
-                        class="signal-fallback-logo"
-                        src="images/logo-white.png"
-                        alt=""
-                        width="377"
-                        height="73"
-                      />
-                    </div>
-                    <div class="signal-fallback-chip signal-fallback-chip-top">Fallback Mode</div>
-                    <div class="signal-fallback-chip signal-fallback-chip-bottom">Older devices stay smooth</div>
-                  </div>
-                </div>
-
-                <div class="signal-stage-status" aria-hidden="true">
-                  <span data-signal-meter></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="signal-steps" data-signal-steps>
-            <article class="signal-step reveal is-active" data-signal-step="0">
-              <span class="signal-step-index">1</span>
-              <h3>Tailored to your brand</h3>
-              <p>No templates. No copy-paste layouts.</p>
-            </article>
-
-            <article class="signal-step reveal" data-signal-step="1">
-              <span class="signal-step-index">2</span>
-              <h3>Refined design quality</h3>
-              <p>Design that feels sharp, current, and credible.</p>
-            </article>
-
-            <article class="signal-step reveal" data-signal-step="2">
-              <span class="signal-step-index">3</span>
-              <h3>Modern build quality</h3>
-              <p>Responsive, fast, and ready to go.</p>
-            </article>
-
-            <article class="signal-step reveal" data-signal-step="3">
-              <span class="signal-step-index">4</span>
-              <h3>Smooth collaboration</h3>
-              <p>Friendly feedback loops with low friction.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section services" id="services">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Services</p>
-            <h2>Custom digital sites and apps built around your business needs.</h2>
-            <p>
-              Every project is built around your brand, your goals, and the people you want to
-              reach.
-            </p>
-          </div>
-
-          <div class="services-grid">
-            <article class="service-card reveal">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <rect x="2.5" y="4" width="19" height="15" rx="2"></rect>
-                  <path d="M2.5 8.5h19"></path>
-                  <path d="M9 20h6"></path>
-                </svg>
-              </div>
-              <h3>Websites</h3>
-              <p>
-                Custom websites, landing pages, and business sites that look sharp and help people
-                take action.
-              </p>
-              <a class="text-link" href="#contact">Build a website</a>
-            </article>
-
-            <article class="service-card reveal reveal-delay-1">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <rect x="7" y="2.5" width="10" height="19" rx="2"></rect>
-                  <path d="M10 5.5h4"></path>
-                  <path d="M11.2 18.8h1.6"></path>
-                </svg>
-              </div>
-              <h3>Apps</h3>
-              <p>
-                Custom mobile apps and tools with clean design, easy UX, and a polished feel.
-              </p>
-              <a class="text-link" href="#contact">Build an app</a>
-            </article>
-
-            <article class="service-card reveal reveal-delay-2">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <rect x="2.5" y="5" width="9" height="7" rx="1.5"></rect>
-                  <rect x="12.5" y="11" width="9" height="10.5" rx="1.5"></rect>
-                  <path d="M11.5 8.5h2"></path>
-                  <path d="M10.5 16h2"></path>
-                </svg>
-              </div>
-              <h3>Web + App Combos</h3>
-              <p>
-                Connected websites and apps built to work together as one clear digital system.
-              </p>
-              <a class="text-link" href="#contact">Build both together</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section choose-us" aria-labelledby="why-choose-us-title">
-        <div class="container">
-          <div class="section-head choose-head reveal">
-            <p class="eyebrow">Why Choose Us?</p>
-            <h2 id="why-choose-us-title">Strong work. Clear process. Easy to work with.</h2>
-            <p>We keep projects clear, well-built, and easy to move through from start to launch.</p>
-          </div>
-
-          <div class="choose-showcase">
-            <article class="choose-feature reveal">
-              <div class="choose-feature-top">
-                <img
-                  class="choose-logo"
-                  src="images/logo-white.png"
-                  alt=""
-                  width="377"
-                  height="73"
-                />
-                <span class="choose-badge">Build Partner</span>
-              </div>
-
-              <p class="choose-feature-title">Clear from kickoff to launch.</p>
-
-              <div class="choose-pill-row" aria-label="Working style">
-                <span>Clear steps</span>
-                <span>Smart strategy</span>
-                <span>Clean build</span>
-              </div>
-
-              <div class="choose-feature-grid">
-                <div>
-                  <strong>Custom</strong>
-                  <p>Built for your brand and goals.</p>
-                </div>
-                <div>
-                  <strong>Polished</strong>
-                  <p>Strong design with clean execution.</p>
-                </div>
-              </div>
-            </article>
-
-            <div class="choose-grid">
-              <article class="choose-point reveal">
-                <span class="choose-icon" aria-hidden="true"></span>
-                <h3>Strategic thinking</h3>
-                <p>Design decisions tied to real business goals.</p>
-              </article>
-              <article class="choose-point reveal reveal-delay-1">
-                <span class="choose-icon" aria-hidden="true"></span>
-                <h3>Clear communication</h3>
-                <p>Straight answers and steady project momentum.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section work" id="work">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Featured Work</p>
-            <h2>A real launch showing how web and app can work together.</h2>
-            <p>StreamPicks is live on the web now, with the app coming next.</p>
-          </div>
-
-          <div class="work-grid">
-            <article class="project-card project-card-featured reveal">
-              <div class="project-copy">
-                <div class="project-status-row">
-                  <p class="project-category">Web + App Ecosystem</p>
-                  <span class="project-status-pill">App Store soon</span>
-                </div>
-                <h3>StreamPicks</h3>
-                <p class="project-description">
-                  A fantasy-style creator platform with a live site, a mobile-first product, and a
-                  launch setup built to grow early interest before the App Store release.
-                </p>
-                <div class="project-highlight-grid">
-                  <div>
-                    <strong>Live now</strong>
-                    <span>Available at streampicks.app</span>
-                  </div>
-                  <div>
-                    <strong>App next</strong>
-                    <span>App Store launch coming soon</span>
-                  </div>
-                  <div>
-                    <strong>Core product</strong>
-                    <span>Creator drafts, leaderboards, and growth tracking</span>
-                  </div>
-                </div>
-                <div class="project-actions">
-                  <a
-                    class="btn btn-primary"
-                    href="https://streampicks.app"
-                    target="_blank"
-                    rel="noreferrer"
-                    >Visit streampicks.app</a
-                  >
-                  <p class="project-note">Live now. App Store next.</p>
-                </div>
-              </div>
-
-              <div class="project-mockup stream-project-mockup" aria-hidden="true">
-                <div class="stream-browser-shell">
-                  <div class="stream-browser-header">
-                    <div class="stream-browser-dots"><span></span><span></span><span></span></div>
-                    <span class="stream-browser-url">streampicks.app</span>
-                    <span class="stream-browser-tag">Launch Preview</span>
-                  </div>
-
-                  <div class="stream-browser-body">
-                    <div class="stream-brand-strip">
-                      <img
-                        class="stream-wordmark"
-                        src="images/streampicks-wordmark.png"
-                        alt=""
-                        width="892"
-                        height="167"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      <span class="stream-kicker">Fantasy for the creator economy</span>
-                    </div>
-
-                    <div class="stream-hero-copy">
-                      <h4>Draft creators. Track growth. Climb the leaderboard.</h4>
-                      <p>Creator leagues, live drafts, and growth-based competition built for launch.</p>
-                    </div>
-
-                    <div class="stream-stat-row">
-                      <div class="stream-stat-card">
-                        <strong>2000+</strong>
-                        <span>tracked creators</span>
-                      </div>
-                      <div class="stream-stat-card">
-                        <strong>Weekly</strong>
-                        <span>league matchups</span>
-                      </div>
-                      <div class="stream-stat-card">
-                        <strong>Soon</strong>
-                        <span>App Store release</span>
-                      </div>
-                    </div>
-
-                    <div class="stream-panel-grid">
-                      <div class="stream-panel-card">
-                        <p class="stream-panel-label">Key feature</p>
-                        <div class="stream-panel-stack">
-                          <strong>Live draft rooms</strong>
-                          <p>See momentum, creator availability, and draft faster.</p>
-                        </div>
-                      </div>
-                      <div class="stream-panel-card stream-panel-card-accent">
-                        <p class="stream-panel-label">Core loop</p>
-                        <ul class="stream-panel-list">
-                          <li>Weekly leaderboards</li>
-                          <li>Global rankings</li>
-                          <li>Creator discovery</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="stream-phone-card">
-                  <div class="stream-phone-top">
-                    <img
-                      class="stream-icon"
-                      src="images/streampicks-icon.png"
-                      alt=""
-                      width="1213"
-                      height="1102"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <span>App preview</span>
-                  </div>
-                  <div class="stream-phone-screen">
-                    <span class="stream-phone-label">Live Draft Board</span>
-                    <strong class="stream-phone-rank">#01</strong>
-                    <span class="stream-phone-subtitle">League momentum</span>
-                    <div class="stream-phone-bars"><span></span><span></span><span></span></div>
-                    <div class="stream-phone-pills"><span>Roster</span><span>Stats</span><span>Rankings</span></div>
-                  </div>
-                </div>
-
-                <div class="stream-floating-status">Waitlist live | App Store soon</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section process" id="process">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Process</p>
-            <h2>A simple 4-step path from idea to launch.</h2>
-            <p>Clear enough to stay on track. Flexible enough to keep things easy.</p>
-          </div>
-
-          <ol class="process-grid">
-            <li class="process-step reveal">
-              <h3>Discover</h3>
-              <p>We start with your goals, audience, and direction.</p>
-            </li>
-            <li class="process-step reveal reveal-delay-1">
-              <h3>Design</h3>
-              <p>We shape the look, flow, and user experience.</p>
-            </li>
-            <li class="process-step reveal reveal-delay-2">
-              <h3>Build</h3>
-              <p>We build the site or app with clean, responsive code.</p>
-            </li>
-            <li class="process-step reveal">
-              <h3>Launch</h3>
-              <p>We test, refine, and launch with confidence.</p>
-            </li>
-          </ol>
         </div>
       </section>
 
       <section class="section about" id="about">
-        <div class="container about-layout">
-          <div class="about-copy reveal">
-            <p class="eyebrow">About Taylor's Tech</p>
-            <h2>We are a modern company focused on good work and a clear process.</h2>
+        <div class="container split-layout">
+          <div class="section-intro" data-reveal>
+            <p class="eyebrow">A store that still makes things easy</p>
+            <h2>The kind of bottle shop you can use for a quick stop or a better bottle.</h2>
             <p>
-              Taylor's Tech Solutions builds custom websites and apps that look sharp, feel easy to
-              use, and help your business grow.
+              Need a dinner wine, a bourbon gift, party beer, or help narrowing down a wall of
+              choices? That&rsquo;s what we&rsquo;re here for. Bella Vista Wine &amp; Spirits is built to be
+              easy, useful, and worth coming back to.
             </p>
-            <p>We keep the process simple, organized, and easy to work through.</p>
-          </div>
-
-          <aside class="about-panel reveal reveal-delay-1" aria-label="Studio highlights">
-            <p class="about-panel-title">What We Build</p>
-            <ul>
-              <li>Custom websites with clear UX and strong flow</li>
-              <li>Mobile apps that feel clean and easy to use</li>
-              <li>Web + app systems that work together</li>
-              <li>Clear communication from start to launch</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section testimonials" aria-labelledby="testimonials-title">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Recent Testimonials</p>
-            <h2 id="testimonials-title">Results people feel good about.</h2>
-            <p>A few examples of the kind of feedback we receive.</p>
-          </div>
-
-          <div class="testimonials-grid">
-            <article class="testimonial-card reveal">
-              <blockquote>
-                "This dude has the best customer service ever. He works with you to make sure the
-                job is done properly and gets the work done quicker than anyone else! He is amazing
-                at his job and I will be looking for him for anything else I need because he can do
-                it all."
-              </blockquote>
-              <p class="testimonial-author">Jessie Wiliford</p>
-            </article>
-
-            <article class="testimonial-card reveal reveal-delay-1">
-              <blockquote>⭐️⭐️⭐️⭐️⭐️</blockquote>
-              <p class="testimonial-author">Taylor Beckham</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section final-cta" id="contact">
-        <div class="container">
-          <div class="cta-panel reveal">
-            <p class="eyebrow">Start Your Project</p>
-            <h2>Ready to build something that fits your brand?</h2>
-            <p>Tell us what you need and we will figure out the best next steps.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="mailto:taylorstechsolutions@icloud.com"
-                >Start Your Project</a
-              >
-              <a class="btn btn-secondary" href="tel:+14792220182">Book a Call</a>
+            <div class="about-notes">
+              <article class="about-note">
+                <strong>Local help</strong>
+                <span>Tell us the budget or the occasion and we&rsquo;ll point you in the right direction.</span>
+              </article>
+              <article class="about-note">
+                <strong>Easy pickup</strong>
+                <span>Quick in-store stops and drive-thru service when you just need to keep moving.</span>
+              </article>
             </div>
+          </div>
+
+          <div class="about-stack" data-reveal>
+            <figure class="image-panel image-panel-large">
+              <img
+                src="assets/interior-aisle.jpg"
+                alt="Aisles of wine and spirits inside the store."
+                width="1000"
+                height="667"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="image-panel image-panel-small">
+              <img
+                src="assets/drive-thru.jpg"
+                alt="Staff member helping a customer at the drive-thru window."
+                width="1000"
+                height="667"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-warm">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Why people come here</p>
+            <h2>Strong shelf. Straightforward help. Easy stop.</h2>
+            <p>
+              We don&rsquo;t try to make this complicated. We keep good variety in the store and make it
+              easier to leave with the right bottle for the moment.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card" data-reveal>
+              <h3>Good selection</h3>
+              <p>
+                Everyday favorites, party staples, better bottles, and shelf finds that are worth a
+                closer look.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <h3>Helpful staff</h3>
+              <p>
+                If you know the budget, the meal, or the person you&rsquo;re buying for, we can narrow it
+                down fast.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <h3>Tastings &amp; events</h3>
+              <p>
+                In-store pours, seasonal tables, and low-pressure events that make it easier to try
+                something new.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <h3>Quick stop convenience</h3>
+              <p>
+                Easy parking, fast checkout, and a drive-thru window for busy evenings and pickup on
+                the way home.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="shop">
+        <div class="container">
+          <div class="section-heading section-heading-light" data-reveal>
+            <p class="eyebrow">Shop by category</p>
+            <h2>Start with the shelf you already know you need.</h2>
+            <p>
+              Full shop pages can come next. For now, this homepage points people to the main
+              categories they&rsquo;ll expect in the store.
+            </p>
+          </div>
+
+          <div class="category-grid">
+            <article
+              class="category-card category-card-wide"
+              data-reveal
+              style="--card-image: url('assets/interior-aisle.jpg'); --card-position: center 45%;"
+            >
+              <p class="category-label">Wine</p>
+              <h3>Weeknight bottles to dinner-party standouts.</h3>
+              <p>Reds, whites, rose, sparkling, and reliable bottles that drink above their price.</p>
+            </article>
+            <article
+              class="category-card"
+              data-reveal
+              style="--card-image: url('assets/whiskey-gift.jpg'); --card-position: center center;"
+            >
+              <p class="category-label">Whiskey &amp; Bourbon</p>
+              <h3>Easy pours and gift-worthy bottles.</h3>
+              <p>From everyday pickup bottles to better gifts for birthdays, hosts, and holidays.</p>
+            </article>
+            <article
+              class="category-card"
+              data-reveal
+              style="--card-image: url('assets/spirits-shelf.jpg'); --card-position: center center;"
+            >
+              <p class="category-label">Tequila &amp; Mezcal</p>
+              <h3>Margarita staples and sipping upgrades.</h3>
+              <p>Bottles for casual taco night, porch drinks, and the people who know what they like.</p>
+            </article>
+            <article
+              class="category-card"
+              data-reveal
+              style="--card-image: url('assets/vodka-shelf.jpg'); --card-position: center center;"
+            >
+              <p class="category-label">Vodka, Gin &amp; Rum</p>
+              <h3>Solid staples for the home bar.</h3>
+              <p>Classic labels, cocktail standards, and a few better picks if you want to step it up.</p>
+            </article>
+            <article
+              class="category-card"
+              data-reveal
+              style="--card-image: url('assets/beer-stack.jpg'); --card-position: center center;"
+            >
+              <p class="category-label">Craft Beer</p>
+              <h3>Cooler-ready grabs and party stacks.</h3>
+              <p>Local favorites, national names, and quick pickup options for the weekend crowd.</p>
+            </article>
+            <article
+              class="category-card"
+              data-reveal
+              style="--card-image: url('assets/tasting-setup.jpg'); --card-position: center 35%;"
+            >
+              <p class="category-label">Ready-to-Drink</p>
+              <h3>Grab-and-go without overthinking it.</h3>
+              <p>Seltzers, canned cocktails, and easy options when convenience matters most.</p>
+            </article>
+            <article
+              class="category-card category-card-wide"
+              data-reveal
+              style="--card-image: url('assets/gift-display.jpg'); --card-position: center center;"
+            >
+              <p class="category-label">Gifts &amp; Party Picks</p>
+              <h3>Hostess bottles, mixers, and celebration help.</h3>
+              <p>Build a better dinner-party table or knock out a solid gift in one stop.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="picks">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Staff picks</p>
+            <h2>Useful picks for the week, the weekend, and the table.</h2>
+            <p>
+              These are sample homepage features for now, but the tone is simple on purpose: helpful
+              picks, real budgets, no snob talk.
+            </p>
+          </div>
+
+          <div class="pick-grid">
+            <article class="pick-card" data-reveal>
+              <span class="pick-tag">Under $25</span>
+              <h3>Good Bottles Under $25</h3>
+              <p>
+                Crisp whites, pizza-night reds, and a couple crowd-pleasers that work when you want
+                something better without going big.
+              </p>
+            </article>
+            <article class="pick-card" data-reveal>
+              <span class="pick-tag">Weekend</span>
+              <h3>Weekend Whiskey Picks</h3>
+              <p>
+                A mix of dependable pour-at-home bottles and a few step-up options when guests are
+                coming over.
+              </p>
+            </article>
+            <article class="pick-card" data-reveal>
+              <span class="pick-tag">Dinner Table</span>
+              <h3>Easy Dinner Wines</h3>
+              <p>
+                Flexible bottles for pasta, grilled chicken, takeout, and the kind of meal that
+                doesn&rsquo;t need a big speech.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-accent" id="events">
+        <div class="container">
+          <div class="events-layout">
+            <div class="events-copy" data-reveal>
+              <p class="eyebrow">Tastings &amp; events</p>
+              <h2>A store that stays active, not sleepy.</h2>
+              <p>
+                Tastings help people try before they buy, find something new, and get a feel for
+                what makes the shop useful. A fuller calendar can come in the next site step.
+              </p>
+              <a class="btn btn-light" href="#visit">See Upcoming Tastings</a>
+            </div>
+
+            <figure class="events-photo" data-reveal>
+              <img
+                src="assets/tasting-crowd.jpg"
+                alt="Customers tasting wine in the store."
+                width="640"
+                height="480"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+
+          <div class="event-grid">
+            <article class="event-card" data-reveal>
+              <p class="event-date">Friday, March 20 • 4-6 PM</p>
+              <h3>Spring Porch Sippers</h3>
+              <p>
+                Fresh whites, crisp rose, and easy grab-and-go bottles for warmer weekends and
+                weeknight dinners outside.
+              </p>
+            </article>
+            <article class="event-card" data-reveal>
+              <p class="event-date">Thursday, March 26 • 5-7 PM</p>
+              <h3>Bourbon Counter Tasting</h3>
+              <p>
+                A side-by-side pour of dependable whiskey picks and a few bottles worth stepping up
+                for.
+              </p>
+            </article>
+            <article class="event-card" data-reveal>
+              <p class="event-date">Saturday, April 4 • 1-4 PM</p>
+              <h3>Dinner Party Wine Table</h3>
+              <p>
+                Easy reds, crowd-friendly whites, and a few hostess-bottle ideas for people who want
+                help without the fuss.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gifts" id="gifts">
+        <div class="container split-layout split-layout-reverse">
+          <div class="gifts-photo" data-reveal>
+            <figure class="image-panel">
+              <img
+                src="assets/gift-display.jpg"
+                alt="Gift and mixer display inside Bella Vista Wine &amp; Spirits."
+                width="1000"
+                height="667"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+
+          <div class="section-intro" data-reveal>
+            <p class="eyebrow">Gifts, parties, and special occasions</p>
+            <h2>Useful when you need more than a random bottle.</h2>
+            <p>
+              Hostess gifts, dinner-party wine, holiday bottles, celebration pours, mixers, or case
+              requests for a bigger gathering. We can help you make the call without turning it into
+              a project.
+            </p>
+            <div class="gift-list">
+              <p>Hostess gifts that look thoughtful without feeling overdone</p>
+              <p>Party pickup for beer, wine, spirits, and mixer add-ons</p>
+              <p>Case requests and celebration bottles when the moment matters</p>
+            </div>
+            <div class="gift-actions">
+              <a class="btn btn-solid" href="tel:+14798762220">Ask for a Recommendation</a>
+              <a class="btn btn-outline" href="#visit">Contact the Store</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark section-dark-soft">
+        <div class="container trust-layout">
+          <div class="section-heading section-heading-light" data-reveal>
+            <p class="eyebrow">Why regulars come back</p>
+            <h2>Friendly help, a better shelf, and an easy place to stop.</h2>
+            <p>
+              Instead of polished platform badges, this section leans on the things people tend to
+              mention most: helpful staff, good whiskey, convenient pickup, and tastings that are
+              actually worth showing up for.
+            </p>
+          </div>
+
+          <div class="trust-grid">
+            <article class="trust-card" data-reveal>
+              <h3>Friendly, useful help</h3>
+              <p>People remember being greeted, getting a quick answer, and leaving with the right bottle.</p>
+            </article>
+            <article class="trust-card" data-reveal>
+              <h3>Better whiskey than expected</h3>
+              <p>One of the steady themes is finding a stronger bourbon shelf than most people expect from a quick stop.</p>
+            </article>
+            <article class="trust-card" data-reveal>
+              <h3>Convenient without feeling generic</h3>
+              <p>Easy parking, fast service, and local personality make it useful on the way home or before a gathering.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section visit" id="visit">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Visit us</p>
+            <h2>Stop in, call ahead, or swing through the window.</h2>
+            <p>
+              We&rsquo;re here for everyday bottles, better gifts, party pickup, and quick local help.
+              Holiday hours may vary, so call if you want to confirm before heading over.
+            </p>
+          </div>
+
+          <div class="visit-grid">
+            <article class="visit-card" data-reveal>
+              <h3>Bella Vista Wine &amp; Spirits</h3>
+              <address class="visit-address">
+                31 Cunningham Corner<br />
+                Bella Vista, AR 72714
+              </address>
+              <p><a href="tel:+14798762220">(479) 876-2220</a></p>
+
+              <div class="hours-grid" aria-label="Store hours">
+                <div><span>Mon-Wed</span><strong>10 AM - 8 PM</strong></div>
+                <div><span>Thu-Sat</span><strong>10 AM - 9 PM</strong></div>
+                <div><span>Sunday</span><strong>Closed</strong></div>
+              </div>
+
+              <div class="visit-actions">
+                <a class="btn btn-solid" href="tel:+14798762220">Call the Store</a>
+                <a
+                  class="btn btn-outline"
+                  href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </article>
+
+            <article class="map-card" data-reveal aria-label="Map placeholder">
+              <div class="map-card-inner">
+                <p class="map-kicker">Map &amp; directions</p>
+                <h3>Embed-ready block for the next site step.</h3>
+                <p>
+                  This placeholder can be swapped for a live map embed later. For now, it keeps the
+                  contact section clean and GitHub Pages-friendly.
+                </p>
+                <ul class="map-points">
+                  <li>Easy parking</li>
+                  <li>Drive-thru window</li>
+                  <li>Quick stop on the way home</li>
+                </ul>
+              </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-grid">
-          <div class="footer-brand">
-            <a class="brand" href="#home" aria-label="Taylor's Tech Solutions home">
-              <img
-                class="brand-logo"
-                src="images/logo-white.png"
-                alt=""
-                width="377"
-                height="73"
-              />
-            </a>
-            <p>
-              Taylor's Tech Solutions builds custom websites, apps, and web + app systems.
-            </p>
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">Bella Vista Wine &amp; Spirits</p>
+          <address class="footer-address">
+            31 Cunningham Corner<br />
+            Bella Vista, AR 72714
+          </address>
+          <p><a href="tel:+14798762220">(479) 876-2220</a></p>
         </div>
 
-        <nav class="footer-panel footer-nav-panel" aria-label="Footer navigation">
-          <p class="footer-title">Navigation</p>
-          <ul class="footer-links footer-links-nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div>
+          <p class="footer-title">Hours</p>
+          <p>Mon-Wed: 10 AM - 8 PM</p>
+          <p>Thu-Sat: 10 AM - 9 PM</p>
+          <p>Sun: Closed</p>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <p class="footer-title">Explore</p>
+          <ul class="footer-nav">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#events">Tastings &amp; Events</a></li>
+            <li><a href="#picks">Staff Picks</a></li>
+            <li><a href="#gifts">Gifts &amp; Parties</a></li>
+            <li><a href="#visit">Contact</a></li>
           </ul>
         </nav>
-
-        <div class="footer-panel">
-          <p class="footer-title">Contact</p>
-          <ul class="footer-links">
-            <li><a href="mailto:taylorstechsolutions@icloud.com">taylorstechsolutions@icloud.com</a></li>
-            <li><a href="tel:+14792220182">+1 (479) 222-0182</a></li>
-            <li class="footer-text-chip">Van Buren, AR</li>
-          </ul>
-        </div>
-
-        <div class="footer-panel">
-          <p class="footer-title">Social</p>
-          <ul class="footer-links">
-            <li><a href="https://instagram.com/taylorstechsolutionsllc" aria-label="Taylor's Tech Solutions on Instagram">Instagram</a></li>
-            <li><a href="https://facebook.com/taylorstechsolutionsllc" aria-label="Taylor's Tech Solutions on Facebook">Facebook</a></li>
-          </ul>
-        </div>
       </div>
 
       <div class="container footer-bottom">
-        <p>&copy; <span id="year"></span> Taylor's Technology Solutions, LLC. All rights reserved.</p>
-        <p class="footer-tagline">Custom websites and apps designed to look exceptional and launch with confidence.</p>
+        <p>Static homepage build for Bella Vista Wine &amp; Spirits.</p>
+        <p>&copy; <span data-year></span> Bella Vista Wine &amp; Spirits</p>
       </div>
     </footer>
   </body>
