@@ -399,6 +399,7 @@ select {
 
 .hero {
   padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(1.75rem, 4vw, 2.6rem);
 }
 
 .hero-grid,
@@ -602,12 +603,12 @@ select {
 }
 
 .social-feed {
-  padding-top: 1rem;
-  padding-bottom: 2.2rem;
+  padding-top: 0.35rem;
+  padding-bottom: 1.5rem;
 }
 
 .social-feed-heading {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.45rem;
   max-width: 34rem;
 }
 
@@ -882,7 +883,7 @@ select {
 
 .gifts {
   background: linear-gradient(180deg, rgba(255, 250, 243, 0.78), rgba(243, 233, 220, 0.86));
-  padding-bottom: clamp(3rem, 6vw, 4.75rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.35rem);
 }
 
 .split-layout-reverse {
@@ -922,7 +923,7 @@ select {
 }
 
 .gift-actions {
-  margin-top: 1.3rem;
+  margin-top: 0.85rem;
 }
 
 .visit-grid {
@@ -937,6 +938,10 @@ select {
 .visit-grid-single {
   max-width: 36rem;
   margin-inline: auto;
+}
+
+.visit {
+  padding-bottom: clamp(1.35rem, 3vw, 2rem);
 }
 
 .visit-address,
@@ -996,11 +1001,11 @@ select {
 }
 
 .map-section {
-  padding-top: clamp(2.8rem, 5vw, 4rem);
+  padding-top: clamp(0.8rem, 2vw, 1.35rem);
 }
 
 .map-section-heading {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.9rem;
 }
 
 .map-embed-card {
