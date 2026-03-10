@@ -625,9 +625,12 @@ select {
   padding: 0.95rem;
   color: var(--ink-light);
   background:
-    radial-gradient(circle at top right, rgba(185, 121, 79, 0.12), transparent 28%),
-    linear-gradient(180deg, #261d1b 0%, #191311 100%);
-  border: 1px solid rgba(65, 46, 38, 0.14);
+    radial-gradient(circle at top right, rgba(255, 244, 228, 0.12), transparent 30%),
+    linear-gradient(rgba(38, 27, 22, 0.28), rgba(24, 16, 13, 0.34)),
+    url("../assets/90814d65-6326-4c96-ac45-9f72c40dc8b9.png");
+  background-position: center;
+  background-size: cover;
+  border: 1px solid rgba(65, 46, 38, 0.18);
   box-shadow: var(--shadow);
 }
 
@@ -657,7 +660,9 @@ select {
 .facebook-frame {
   overflow: hidden;
   border-radius: calc(var(--radius-md) - 4px);
-  background: #fff;
+  background: rgba(255, 250, 243, 0.98);
+  border: 1px solid rgba(65, 46, 38, 0.12);
+  box-shadow: 0 16px 30px rgba(17, 13, 11, 0.16);
   min-height: 0;
 }
 
@@ -706,17 +711,20 @@ select {
 }
 
 #why {
+  color: var(--ink-light);
   background:
-    radial-gradient(circle at top center, rgba(255, 248, 239, 0.22), transparent 42%),
-    linear-gradient(rgba(244, 233, 218, 0.56), rgba(232, 217, 198, 0.54)),
-    url("../assets/90814d65-6326-4c96-ac45-9f72c40dc8b9.png");
-  background-position: center;
-  background-size: cover;
-  border-block-color: rgba(65, 46, 38, 0.12);
+    radial-gradient(circle at right top, rgba(185, 121, 79, 0.16), transparent 26%),
+    linear-gradient(180deg, #546246 0%, #3f4a35 100%);
+  border-block-color: rgba(255, 255, 255, 0.08);
+}
+
+#why .eyebrow,
+#why .section-heading h2 {
+  color: var(--ink-light);
 }
 
 #why .section-heading p:last-child {
-  color: #43322b;
+  color: rgba(247, 240, 231, 0.76);
 }
 
 #why .feature-card {
@@ -725,7 +733,7 @@ select {
 }
 
 #why .drive-thru-card {
-  border-color: rgba(65, 46, 38, 0.16);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .drive-thru-card {
