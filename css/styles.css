@@ -187,6 +187,7 @@ select {
   display: inline-flex;
   align-items: center;
   gap: 0.9rem;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -195,6 +196,7 @@ select {
   place-items: center;
   width: 3.65rem;
   height: 3.65rem;
+  overflow: hidden;
   padding: 0.18rem;
   border-radius: 50%;
   background: linear-gradient(145deg, rgba(255, 250, 243, 0.95), rgba(245, 233, 220, 0.96));
@@ -207,6 +209,13 @@ select {
   height: 100%;
   object-fit: contain;
   border-radius: 50%;
+}
+
+.brand-logo-original {
+  object-fit: cover;
+  clip-path: circle(43% at 50% 50%);
+  transform: scale(1.16);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .brand-copy {
@@ -275,6 +284,7 @@ select {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  margin-left: 0.25rem;
 }
 
 .header-social {
@@ -388,7 +398,7 @@ select {
 }
 
 .hero {
-  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
 }
 
 .hero-grid,
@@ -426,13 +436,21 @@ select {
   margin: 0;
   font-size: clamp(2.8rem, 6vw, 5.2rem);
   line-height: 0.95;
-  max-width: 11ch;
+  max-width: 9.5ch;
   text-wrap: balance;
+}
+
+.hero-quote {
+  margin: 1rem 0 0;
+  color: var(--wine);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+  line-height: 1.25;
 }
 
 .hero-text {
   max-width: 38rem;
-  margin: 1.4rem 0 0;
+  margin: 0.85rem 0 0;
   font-size: 1.12rem;
   color: var(--ink-soft);
   text-wrap: pretty;
@@ -473,42 +491,55 @@ select {
 }
 
 .weller-chip {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 0.9rem;
-  margin-top: 1.5rem;
-  padding: 0.7rem 1rem 0.7rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(255, 250, 243, 0.88);
-  border: 1px solid rgba(65, 46, 38, 0.1);
-  box-shadow: var(--shadow-soft);
+  gap: 1rem;
+  margin-top: 1.35rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md);
+  color: var(--ink-light);
+  background:
+    radial-gradient(circle at right top, rgba(185, 121, 79, 0.16), transparent 26%),
+    linear-gradient(180deg, #546246 0%, #3f4a35 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .weller-chip-photo {
-  width: 4.75rem;
-  height: 4.75rem;
+  width: 5.5rem;
+  height: 5.5rem;
   overflow: hidden;
   border-radius: 50%;
   flex: 0 0 auto;
-  border: 2px solid rgba(255, 250, 243, 0.88);
-  box-shadow: 0 10px 22px rgba(47, 31, 25, 0.12);
+  border: 3px solid rgba(255, 250, 243, 0.82);
+  box-shadow: 0 12px 24px rgba(17, 13, 11, 0.22);
 }
 
 .weller-chip-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 22%;
+  object-position: 51% 15%;
 }
 
 .weller-chip-copy .eyebrow {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.35rem;
+  color: rgba(247, 240, 231, 0.72);
 }
 
-.weller-chip-copy p:last-child {
+.weller-chip-copy blockquote {
   margin: 0;
-  max-width: 26rem;
-  color: var(--ink-soft);
+  max-width: 34rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.08rem, 2.5vw, 1.45rem);
+  line-height: 1.28;
+}
+
+.weller-signoff {
+  margin: 0.55rem 0 0;
+  color: rgba(247, 240, 231, 0.78);
+  font-weight: 700;
 }
 
 .hero-media {
@@ -558,23 +589,13 @@ select {
   min-height: 15rem;
 }
 
-.hero-badge {
-  align-self: end;
-  padding: 1.2rem 1.1rem;
-  border-radius: var(--radius-md);
-  background: linear-gradient(145deg, rgba(255, 250, 243, 0.92), rgba(244, 233, 220, 0.96));
-  border: 1px solid rgba(65, 46, 38, 0.12);
-  box-shadow: var(--shadow);
-}
-
-.hero-badge-label {
-  display: block;
-  margin-bottom: 0.45rem;
-  color: var(--olive);
-}
-
 .social-feed {
-  padding-top: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.2rem;
+}
+
+.social-feed-heading {
+  margin-bottom: 1.1rem;
 }
 
 .social-layout {
@@ -684,6 +705,11 @@ select {
   box-shadow: var(--shadow);
 }
 
+.facebook-card-centered {
+  max-width: 54rem;
+  margin: 0 auto;
+}
+
 .facebook-card-head {
   display: flex;
   align-items: center;
@@ -716,15 +742,10 @@ select {
   min-height: 760px;
 }
 
-.facebook-fallback {
-  margin: 0.95rem 0.25rem 0.2rem;
-  color: rgba(247, 240, 231, 0.72);
-}
-
-.facebook-fallback a {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
+.facebook-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.8rem;
 }
 
 .section-intro,
@@ -794,6 +815,7 @@ select {
 .section-warm {
   background: rgba(255, 250, 243, 0.52);
   border-block: 1px solid rgba(65, 46, 38, 0.06);
+  padding-top: clamp(2.6rem, 5vw, 4rem);
 }
 
 .feature-grid,
@@ -968,6 +990,7 @@ select {
 
 .gifts {
   background: linear-gradient(180deg, rgba(255, 250, 243, 0.78), rgba(243, 233, 220, 0.86));
+  padding-bottom: clamp(3rem, 6vw, 4.75rem);
 }
 
 .split-layout-reverse {
@@ -1006,6 +1029,10 @@ select {
   box-shadow: 0 0 0 0.35rem rgba(83, 97, 71, 0.08);
 }
 
+.gift-actions {
+  margin-top: 1.3rem;
+}
+
 .visit-grid {
   align-items: stretch;
 }
@@ -1013,6 +1040,11 @@ select {
 .visit-card,
 .map-card {
   min-height: 100%;
+}
+
+.visit-grid-single {
+  max-width: 36rem;
+  margin-inline: auto;
 }
 
 .visit-address,
@@ -1069,6 +1101,36 @@ select {
 .map-points li {
   position: relative;
   padding-left: 1.35rem;
+}
+
+.map-section {
+  padding-top: clamp(2.8rem, 5vw, 4rem);
+}
+
+.map-section-heading {
+  margin-bottom: 1.25rem;
+}
+
+.map-embed-card {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: #ddd4c8;
+}
+
+.map-embed-card iframe {
+  display: block;
+  width: 100%;
+  height: 25rem;
+  border: 0;
+}
+
+.map-embed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1rem;
 }
 
 .site-footer {
@@ -1270,25 +1332,36 @@ select {
 @media (max-width: 699px) {
   .utility-inner {
     justify-items: start;
+    gap: 0.45rem;
+    padding: 0.62rem 0;
   }
 
   .header-inner {
-    gap: 0.65rem;
+    gap: 0.55rem;
+    min-height: 4.5rem;
   }
 
   .brand {
-    gap: 0.7rem;
+    gap: 0.6rem;
   }
 
   .brand-mark {
-    width: 3rem;
-    height: 3rem;
+    width: 2.9rem;
+    height: 2.9rem;
   }
 
   .utility-primary,
   .utility-secondary {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .utility-link,
+  .utility-status,
+  .utility-note {
+    font-size: 0.92rem;
+    line-height: 1.35;
   }
 
   .utility-status,
@@ -1296,19 +1369,15 @@ select {
     max-width: none;
   }
 
-  .social-head {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .weller-chip {
-    display: grid;
-    justify-items: start;
-    border-radius: var(--radius-md);
+    grid-template-columns: 4.8rem minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 0.9rem;
   }
 
-  .facebook-card-head {
-    justify-content: flex-start;
+  .weller-chip-photo {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 
   .facebook-frame,
@@ -1318,8 +1387,9 @@ select {
   }
 
   .hero-copy h1 {
-    max-width: 9ch;
-    font-size: clamp(2.35rem, 11vw, 3.4rem);
+    max-width: 11.5ch;
+    font-size: clamp(2.2rem, 9.6vw, 3.2rem);
+    line-height: 0.94;
   }
 
   .hero-media {
@@ -1332,7 +1402,7 @@ select {
   }
 
   .hero-card-accent {
-    min-height: 14rem;
+    display: none;
   }
 
   .section-heading,
@@ -1345,34 +1415,40 @@ select {
   }
 
   .brand-name {
-    font-size: 0.96rem;
+    font-size: 0.94rem;
+    line-height: 1.05;
   }
 
   .brand-meta {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+    line-height: 1.15;
   }
 
   .header-meta {
-    gap: 0.45rem;
-  }
-
-  .header-social {
     gap: 0.35rem;
   }
 
+  .header-social {
+    gap: 0.28rem;
+  }
+
   .header-social-link {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.72rem;
+    height: 1.72rem;
   }
 
   .header-social-link svg {
-    width: 0.85rem;
-    height: 0.85rem;
+    width: 0.8rem;
+    height: 0.8rem;
   }
 
   .menu-toggle {
-    width: 2.65rem;
-    height: 2.65rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .map-embed-card iframe {
+    height: 21rem;
   }
 }
 

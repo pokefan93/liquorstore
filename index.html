@@ -51,8 +51,8 @@
         <a class="brand" href="#top" aria-label="Bella Vista Wine &amp; Spirits home">
           <span class="brand-mark" aria-hidden="true">
             <img
-              class="brand-logo"
-              src="assets/bvws-logo-clean.svg"
+              class="brand-logo brand-logo-original"
+              src="assets/facebook-page-logo.jpg"
               alt=""
               width="72"
               height="72"
@@ -68,7 +68,7 @@
           <ul class="nav-list">
             <li><a href="#top">Home</a></li>
             <li><a href="#facebook">Updates</a></li>
-            <li><a href="#events">Tastings &amp; Events</a></li>
+            <li><a href="#why">Why Here</a></li>
             <li><a href="#gifts">Gifts &amp; Parties</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#visit">Contact</a></li>
@@ -132,18 +132,19 @@
           <div class="hero-copy" data-reveal>
             <p class="eyebrow">Modern local bottle shop in Bella Vista</p>
             <h1>Good bottles. Helpful people. Right here in Bella Vista.</h1>
+            <p class="hero-quote">&ldquo;Convenience and connoisseurship all in one place.&rdquo;</p>
             <p class="hero-text">
-              Convenience and connoisseurship all in one place, with beer, wine, liquor, tasting
-              classes, and a drive-thru that makes local stops easy.
+              Beer, wine, liquor, local recommendations, and a drive-thru that makes quick stops
+              feel easy.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-solid" href="#events">See Tastings &amp; Events</a>
+              <a class="btn btn-solid" href="#facebook">See Store Updates</a>
               <a class="btn btn-outline" href="#visit">Hours &amp; Directions</a>
             </div>
             <ul class="hero-points">
               <li>Beer, wine, liquor, and strong everyday recommendations</li>
               <li>Helpful staff and a drive-thru window when time is tight</li>
-              <li>Tasting classes and store events that feel local, not stuffy</li>
+              <li>Gift bottles and party help without the guesswork</li>
             </ul>
           </div>
 
@@ -159,16 +160,12 @@
             </figure>
             <figure class="hero-card hero-card-accent">
               <img
-                src="assets/tasting-setup.jpg"
-                alt="Tasting setup with sample pours at Bella Vista Wine &amp; Spirits."
-                width="800"
-                height="1000"
+                src="assets/spirits-shelf.jpg"
+                alt="Bottle displays inside Bella Vista Wine &amp; Spirits."
+                width="1800"
+                height="1200"
               />
             </figure>
-            <div class="hero-badge">
-              <span class="hero-badge-label">Worth the stop</span>
-              <strong>Wine, spirits, beer, gifts, and straightforward local help.</strong>
-            </div>
           </div>
         </div>
 
@@ -185,79 +182,28 @@
             </div>
             <div class="weller-chip-copy">
               <p class="eyebrow">Meet Weller</p>
-              <p>The shop dog adds some actual neighborhood personality to the place.</p>
+              <blockquote>
+                &ldquo;I&rsquo;ve sniffed around. Strong selection, quick convenience, and a staff that
+                really knows their bottles. Five paws.&rdquo;
+              </blockquote>
+              <p class="weller-signoff">- Weller</p>
             </div>
           </aside>
         </div>
       </section>
 
       <section class="section social-feed" id="facebook">
-        <div class="container social-layout">
-          <div class="social-copy" data-reveal>
-            <div class="social-head">
-              <div class="social-logo-shell">
-                <img
-                  class="social-logo"
-                  src="assets/bvws-logo-clean.svg"
-                  alt="Bella Vista Wine &amp; Spirits logo"
-                  width="240"
-                  height="240"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <p class="eyebrow">Latest on Facebook</p>
-                <h2>See tastings, store updates, and what just hit the shelf.</h2>
-              </div>
-            </div>
-
-            <p class="social-text">
-              Their Facebook page is the fastest place to catch tasting tables, fresh arrivals,
-              seasonal displays, and everyday store updates. This gives the homepage some life right
-              near the top without adding any backend complexity.
+        <div class="container">
+          <div class="section-heading social-feed-heading" data-reveal>
+            <p class="eyebrow">Latest on Facebook</p>
+            <h2>Fresh posts from the store.</h2>
+            <p>
+              Follow along for shelf updates, new bottles, and the day-to-day personality of the
+              shop.
             </p>
-
-            <blockquote class="bio-quote">
-              &ldquo;Convenience and connoisseurship all in one place -- we&rsquo;re taking beer, wine,
-              and liquor to the next level with our tasting classes and drive-thru.&rdquo;
-            </blockquote>
-
-            <div class="social-actions">
-              <a
-                class="btn btn-solid"
-                href="https://www.facebook.com/VillagePeopleLiquor/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open Facebook Page
-              </a>
-              <a class="btn btn-outline" href="#events">Browse Tastings</a>
-            </div>
-
-            <div class="social-notes">
-              <article class="social-note">
-                <strong>Real store activity</strong>
-                <p>Posts, counter tastings, event tables, and day-to-day updates from the actual shop.</p>
-              </article>
-              <article class="social-note">
-                <strong>Static-site friendly</strong>
-                <p>The feed is embedded with Facebook&rsquo;s page plugin, so it still works on GitHub Pages.</p>
-              </article>
-            </div>
           </div>
 
-          <div class="facebook-card" data-reveal>
-            <div class="facebook-card-head">
-              <a
-                class="facebook-link"
-                href="https://www.facebook.com/VillagePeopleLiquor/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Follow on Facebook
-              </a>
-            </div>
-
+          <div class="facebook-card facebook-card-centered" data-reveal>
             <div class="facebook-frame">
               <iframe
                 data-facebook-embed
@@ -274,18 +220,16 @@
                 loading="lazy"
               ></iframe>
             </div>
-
-            <p class="facebook-fallback">
-              If the feed is blocked by browser privacy settings, open the page directly on
+            <div class="facebook-card-actions">
               <a
+                class="btn btn-solid"
                 href="https://www.facebook.com/VillagePeopleLiquor/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Facebook
+                Follow Us on Facebook
               </a>
-              .
-            </p>
+            </div>
           </div>
         </div>
       </section>
@@ -335,7 +279,7 @@
         </div>
       </section>
 
-      <section class="section section-warm">
+      <section class="section section-warm" id="why">
         <div class="container">
           <div class="section-heading" data-reveal>
             <p class="eyebrow">Why people come here</p>
@@ -362,10 +306,9 @@
               </p>
             </article>
             <article class="feature-card" data-reveal>
-              <h3>Tastings &amp; events</h3>
+              <h3>Useful gifts</h3>
               <p>
-                In-store pours, seasonal tables, and low-pressure events that make it easier to try
-                something new.
+                Host gifts, dinner bottles, and celebration picks that don&rsquo;t feel random or rushed.
               </p>
             </article>
             <article class="feature-card" data-reveal>
@@ -375,32 +318,6 @@
                 the way home.
               </p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-accent" id="events">
-        <div class="container">
-          <div class="events-layout">
-            <div class="events-copy" data-reveal>
-              <p class="eyebrow">Tastings &amp; events</p>
-              <h2>A store that stays active, not sleepy.</h2>
-              <p>
-                Tastings help people try before they buy, find something new, and get a feel for
-                what makes the shop useful. A fuller calendar can come in the next site step.
-              </p>
-              <a class="btn btn-light" href="#visit">See Upcoming Tastings</a>
-            </div>
-
-            <figure class="events-photo" data-reveal>
-              <img
-                src="assets/tasting-crowd.jpg"
-                alt="Customers tasting wine in the store."
-                width="640"
-                height="480"
-                loading="lazy"
-              />
-            </figure>
           </div>
         </div>
       </section>
@@ -450,7 +367,7 @@
             </p>
           </div>
 
-          <div class="visit-grid">
+          <div class="visit-grid visit-grid-single">
             <article class="visit-card" data-reveal>
               <h3>Bella Vista Wine &amp; Spirits</h3>
               <address class="visit-address">
@@ -477,22 +394,37 @@
                 </a>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
 
-            <article class="map-card" data-reveal aria-label="Map placeholder">
-              <div class="map-card-inner">
-                <p class="map-kicker">Map &amp; directions</p>
-                <h3>Embed-ready block for the next site step.</h3>
-                <p>
-                  This placeholder can be swapped for a live map embed later. For now, it keeps the
-                  contact section clean and GitHub Pages-friendly.
-                </p>
-                <ul class="map-points">
-                  <li>Easy parking</li>
-                  <li>Drive-thru window</li>
-                  <li>Quick stop on the way home</li>
-                </ul>
-              </div>
-            </article>
+      <section class="section map-section" id="directions">
+        <div class="container">
+          <div class="section-heading map-section-heading" data-reveal>
+            <p class="eyebrow">Map &amp; directions</p>
+            <h2>Find the store fast.</h2>
+            <p>Open the route, call ahead, or save the stop for later.</p>
+          </div>
+
+          <div class="map-embed-card" data-reveal>
+            <iframe
+              title="Map to Bella Vista Wine and Spirits"
+              src="https://www.google.com/maps?q=31%20Cunningham%20Corner%2C%20Bella%20Vista%2C%20AR%2072714&amp;z=15&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div class="map-embed-actions" data-reveal>
+            <a
+              class="btn btn-solid"
+              href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Get Directions
+            </a>
+            <a class="btn btn-outline" href="tel:+14798762220">Call the Store</a>
           </div>
         </div>
       </section>
@@ -521,7 +453,7 @@
           <ul class="footer-nav">
             <li><a href="#top">Home</a></li>
             <li><a href="#facebook">Updates</a></li>
-            <li><a href="#events">Tastings &amp; Events</a></li>
+            <li><a href="#why">Why Here</a></li>
             <li><a href="#gifts">Gifts &amp; Parties</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#visit">Contact</a></li>
