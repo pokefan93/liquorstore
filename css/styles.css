@@ -457,11 +457,11 @@ select {
 }
 
 .hero-actions + .hero-text {
-  margin-top: 1.2rem;
+  margin-top: 1.45rem;
 }
 
 .hero-text + .hero-points {
-  margin-top: 1.35rem;
+  margin-top: 1.15rem;
 }
 
 .hero-actions,
@@ -475,7 +475,7 @@ select {
 
 .hero-points {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.55rem;
   margin-top: 1.8rem;
 }
 
@@ -1132,13 +1132,27 @@ select {
 
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 500ms ease, transform 500ms ease;
+  transform: translate3d(0, 26px, 0) scale(0.985);
+  filter: saturate(0.92);
+  transition:
+    opacity 420ms ease,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 420ms ease;
+  will-change: opacity, transform;
+}
+
+.js [data-reveal].is-hidden-above {
+  transform: translate3d(0, -26px, 0) scale(0.985);
+}
+
+.js [data-reveal].is-hidden-below {
+  transform: translate3d(0, 26px, 0) scale(0.985);
 }
 
 .js [data-reveal].is-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: none;
 }
 
 .feature-card:hover,

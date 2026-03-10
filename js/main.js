@@ -6,6 +6,10 @@ const yearNode = document.querySelector("[data-year]");
 const facebookEmbed = document.querySelector("[data-facebook-embed]");
 const facebookFrame = facebookEmbed?.closest(".facebook-frame") ?? null;
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const revealInset = 56;
+const revealVisibleClass = "is-visible";
+const revealAboveClass = "is-hidden-above";
+const revealBelowClass = "is-hidden-below";
 
 const weeklyHours = {
   Sunday: "Closed today",
@@ -38,34 +42,75 @@ const setScrolledState = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 8);
 };
 
+const resetRevealClasses = (node) => {
+  node.classList.remove(revealVisibleClass, revealAboveClass, revealBelowClass);
+};
+
+const setRevealState = (node, rect = node.getBoundingClientRect()) => {
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  const topBoundary = revealInset;
+  const bottomBoundary = viewportHeight - revealInset;
+
+  resetRevealClasses(node);
+
+  if (rect.bottom > topBoundary && rect.top < bottomBoundary) {
+    node.classList.add(revealVisibleClass);
+    return;
+  }
+
+  if (rect.top >= bottomBoundary) {
+    node.classList.add(revealBelowClass);
+    return;
+  }
+
+  node.classList.add(revealAboveClass);
+};
+
+const showAllRevealNodes = () => {
+  revealNodes.forEach((node) => {
+    resetRevealClasses(node);
+    node.classList.add(revealVisibleClass);
+  });
+};
+
+let revealObserver = null;
+
+const destroyRevealObserver = () => {
+  if (!revealObserver) {
+    return;
+  }
+
+  revealObserver.disconnect();
+  revealObserver = null;
+};
+
 const initReveal = () => {
   if (!revealNodes.length) {
     return;
   }
 
   if (reduceMotionQuery.matches || !("IntersectionObserver" in window)) {
-    revealNodes.forEach((node) => node.classList.add("is-visible"));
+    showAllRevealNodes();
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+  destroyRevealObserver();
 
-        entry.target.classList.add("is-visible");
-        obs.unobserve(entry.target);
+  revealNodes.forEach((node) => setRevealState(node));
+
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        setRevealState(entry.target, entry.boundingClientRect);
       });
     },
     {
-      threshold: 0.18,
-      rootMargin: "0px 0px -48px",
+      threshold: 0,
+      rootMargin: `-${revealInset}px 0px -${revealInset}px 0px`,
     }
   );
 
-  revealNodes.forEach((node) => observer.observe(node));
+  revealNodes.forEach((node) => revealObserver.observe(node));
 };
 
 let lastFacebookWidth = 0;
@@ -118,11 +163,16 @@ setScrolledState();
 initReveal();
 
 window.addEventListener("scroll", setScrolledState, { passive: true });
+window.addEventListener("resize", initReveal, { passive: true });
 
 const handleReducedMotionChange = () => {
   if (reduceMotionQuery.matches) {
-    revealNodes.forEach((node) => node.classList.add("is-visible"));
+    destroyRevealObserver();
+    showAllRevealNodes();
+    return;
   }
+
+  initReveal();
 };
 
 if ("addEventListener" in reduceMotionQuery) {
