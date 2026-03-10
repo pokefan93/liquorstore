@@ -44,7 +44,15 @@
     <header class="site-header" data-header>
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="Bella Vista Wine &amp; Spirits home">
-          <span class="brand-mark" aria-hidden="true">BV</span>
+          <span class="brand-mark" aria-hidden="true">
+            <img
+              class="brand-logo"
+              src="assets/bvws-logo-clean.svg"
+              alt=""
+              width="72"
+              height="72"
+            />
+          </span>
           <span class="brand-copy">
             <span class="brand-name">Bella Vista Wine &amp; Spirits</span>
             <span class="brand-meta">Bella Vista, Arkansas</span>
@@ -123,6 +131,99 @@
               <span class="hero-badge-label">Worth the stop</span>
               <strong>Wine, spirits, beer, gifts, and straightforward local help.</strong>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section social-feed" id="facebook">
+        <div class="container social-layout">
+          <div class="social-copy" data-reveal>
+            <div class="social-head">
+              <div class="social-logo-shell">
+                <img
+                  class="social-logo"
+                  src="assets/bvws-logo-clean.svg"
+                  alt="Bella Vista Wine &amp; Spirits logo"
+                  width="240"
+                  height="240"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p class="eyebrow">Latest on Facebook</p>
+                <h2>See tastings, store updates, and what just hit the shelf.</h2>
+              </div>
+            </div>
+
+            <p class="social-text">
+              Their Facebook page is the fastest place to catch tasting tables, fresh arrivals,
+              seasonal displays, and everyday store updates. This gives the homepage some life right
+              near the top without adding any backend complexity.
+            </p>
+
+            <div class="social-actions">
+              <a
+                class="btn btn-solid"
+                href="https://www.facebook.com/VillagePeopleLiquor/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Facebook Page
+              </a>
+              <a class="btn btn-outline" href="#events">Browse Tastings</a>
+            </div>
+
+            <div class="social-notes">
+              <article class="social-note">
+                <strong>Real store activity</strong>
+                <p>Posts, counter tastings, event tables, and day-to-day updates from the actual shop.</p>
+              </article>
+              <article class="social-note">
+                <strong>Static-site friendly</strong>
+                <p>The feed is embedded with Facebook&rsquo;s page plugin, so it still works on GitHub Pages.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="facebook-card" data-reveal>
+            <div class="facebook-card-head">
+              <span class="facebook-pill">Live timeline</span>
+              <a
+                class="facebook-link"
+                href="https://www.facebook.com/VillagePeopleLiquor/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Follow on Facebook
+              </a>
+            </div>
+
+            <div class="facebook-frame">
+              <iframe
+                title="Bella Vista Wine and Spirits Facebook posts"
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FVillagePeopleLiquor%2F&amp;tabs=timeline&amp;width=500&amp;height=760&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false"
+                width="500"
+                height="760"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <p class="facebook-fallback">
+              If the feed is blocked by browser privacy settings, open the page directly on
+              <a
+                href="https://www.facebook.com/VillagePeopleLiquor/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
+              .
+            </p>
           </div>
         </div>
       </section>
@@ -533,6 +634,7 @@
           <p class="footer-title">Explore</p>
           <ul class="footer-nav">
             <li><a href="#top">Home</a></li>
+            <li><a href="#facebook">Facebook</a></li>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#events">Tastings &amp; Events</a></li>
             <li><a href="#picks">Staff Picks</a></li>
