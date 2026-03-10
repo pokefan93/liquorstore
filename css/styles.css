@@ -486,6 +486,12 @@ select {
   line-height: 1.25;
 }
 
+.hero-quote-band {
+  max-width: 34rem;
+  margin: 1rem auto 0.9rem;
+  text-align: center;
+}
+
 .hero-text {
   max-width: 38rem;
   margin: 0.85rem 0 0;
@@ -495,7 +501,7 @@ select {
 }
 
 .hero-actions + .hero-text {
-  margin-top: 0.95rem;
+  margin-top: 1.2rem;
 }
 
 .hero-text + .hero-points {
@@ -639,6 +645,10 @@ select {
 .hero-card-main {
   grid-row: auto;
   min-height: 24rem;
+}
+
+.hero-card-main img {
+  object-position: 40% 50%;
 }
 
 .hero-card-accent {
@@ -1341,6 +1351,10 @@ select {
   .hero-card-main {
     grid-row: auto;
     min-height: 17rem;
+  }
+
+  .hero-card-main img {
+    object-position: 34% 50%;
   }
 
   .hero-card-accent {
