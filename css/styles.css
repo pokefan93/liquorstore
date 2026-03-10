@@ -112,8 +112,8 @@ select {
 
 .utility-inner {
   display: grid;
-  gap: 0.7rem 1rem;
-  padding: 0.8rem 0;
+  gap: 0.55rem 1rem;
+  padding: 0.72rem 0;
   align-items: center;
 }
 
@@ -123,6 +123,13 @@ select {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem 1rem;
+}
+
+.utility-contact {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
 }
 
 .utility-secondary {
@@ -139,6 +146,10 @@ select {
   width: fit-content;
 }
 
+.utility-link-address {
+  max-width: 100%;
+}
+
 .utility-link:hover,
 .utility-link:focus-visible {
   color: #fff;
@@ -149,7 +160,21 @@ select {
 }
 
 .utility-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0;
+  color: rgba(247, 240, 231, 0.82);
+  white-space: nowrap;
+}
+
+.utility-status::before {
+  content: "";
+  width: 0.28rem;
+  height: 0.28rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(247, 240, 231, 0.7);
 }
 
 .utility-note {
@@ -180,7 +205,7 @@ select {
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
-  min-height: 5rem;
+  min-height: 5.1rem;
 }
 
 .brand {
@@ -220,6 +245,7 @@ select {
 
 .brand-copy {
   display: grid;
+  gap: 0.12rem;
   min-width: 0;
 }
 
@@ -238,14 +264,16 @@ select {
 }
 
 .brand-name {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  line-height: 1.08;
 }
 
 .brand-meta {
   color: var(--ink-soft);
   font-size: 0.9rem;
+  line-height: 1.15;
 }
 
 .menu-toggle {
@@ -283,25 +311,30 @@ select {
 .header-meta {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.45rem;
   margin-left: 0.25rem;
+  padding: 0.26rem 0.32rem 0.26rem 0.42rem;
+  border-radius: 999px;
+  border: 1px solid rgba(65, 46, 38, 0.08);
+  background: rgba(255, 250, 243, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54);
 }
 
 .header-social {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .header-social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   border: 1px solid rgba(65, 46, 38, 0.12);
-  background: rgba(255, 250, 243, 0.82);
+  background: rgba(255, 250, 243, 0.9);
   color: var(--wine-deep);
   transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, background-color 180ms ease;
 }
@@ -399,7 +432,7 @@ select {
 
 .hero {
   padding-top: clamp(2rem, 5vw, 4rem);
-  padding-bottom: clamp(1.75rem, 4vw, 2.6rem);
+  padding-bottom: clamp(0.85rem, 2.5vw, 1.5rem);
 }
 
 .hero-grid,
@@ -533,7 +566,9 @@ select {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 51% 15%;
+  object-position: 52% 12%;
+  transform: scale(1.34);
+  transform-origin: 50% 16%;
 }
 
 .weller-chip-copy .eyebrow {
@@ -616,7 +651,7 @@ select {
 }
 
 .social-feed-heading {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0;
   max-width: 34rem;
 }
 
@@ -1227,7 +1262,7 @@ select {
   .utility-inner {
     justify-items: start;
     gap: 0.45rem;
-    padding: 0.62rem 0;
+    padding: 0.56rem 0;
   }
 
   .header-inner {
@@ -1251,6 +1286,10 @@ select {
     gap: 0.35rem;
   }
 
+  .utility-contact {
+    gap: 0.35rem 0.7rem;
+  }
+
   .utility-link,
   .utility-status,
   .utility-note {
@@ -1261,6 +1300,10 @@ select {
   .utility-status,
   .utility-note {
     max-width: none;
+  }
+
+  .utility-status {
+    white-space: normal;
   }
 
   .weller-chip {
@@ -1314,17 +1357,18 @@ select {
   }
 
   .brand-name {
-    font-size: 0.94rem;
-    line-height: 1.05;
+    font-size: 0.96rem;
+    line-height: 1.08;
   }
 
   .brand-meta {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     line-height: 1.15;
   }
 
   .header-meta {
-    gap: 0.35rem;
+    gap: 0.28rem;
+    padding: 0.18rem 0.22rem 0.18rem 0.3rem;
   }
 
   .header-social {
@@ -1332,8 +1376,8 @@ select {
   }
 
   .header-social-link {
-    width: 1.72rem;
-    height: 1.72rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .header-social-link svg {
