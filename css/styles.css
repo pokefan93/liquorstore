@@ -461,6 +461,14 @@ select {
   text-wrap: pretty;
 }
 
+.hero-actions + .hero-text {
+  margin-top: 0.95rem;
+}
+
+.hero-text + .hero-points {
+  margin-top: 1.35rem;
+}
+
 .hero-actions,
 .gift-actions,
 .visit-actions {
@@ -603,12 +611,12 @@ select {
 }
 
 .social-feed {
-  padding-top: 0.35rem;
+  padding-top: 0;
   padding-bottom: 1.5rem;
 }
 
 .social-feed-heading {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.2rem;
   max-width: 34rem;
 }
 
@@ -693,6 +701,7 @@ select {
   background: rgba(255, 250, 243, 0.52);
   border-block: 1px solid rgba(65, 46, 38, 0.06);
   padding-top: clamp(1.75rem, 4vw, 2.8rem);
+  padding-bottom: clamp(1.9rem, 4vw, 2.75rem);
 }
 
 .drive-thru-card {
@@ -941,6 +950,7 @@ select {
 }
 
 .visit {
+  padding-top: clamp(2.1rem, 4vw, 3rem);
   padding-bottom: clamp(1.35rem, 3vw, 2rem);
 }
 
