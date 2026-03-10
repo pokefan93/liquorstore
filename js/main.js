@@ -7,6 +7,8 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const openTodayNode = document.querySelector("[data-open-today]");
 const revealNodes = document.querySelectorAll("[data-reveal]");
 const yearNode = document.querySelector("[data-year]");
+const facebookEmbed = document.querySelector("[data-facebook-embed]");
+const facebookFrame = facebookEmbed?.closest(".facebook-frame") ?? null;
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const weeklyHours = {
@@ -80,6 +82,33 @@ const initReveal = () => {
   revealNodes.forEach((node) => observer.observe(node));
 };
 
+let lastFacebookWidth = 0;
+
+const syncFacebookEmbed = () => {
+  if (!facebookEmbed || !facebookFrame) {
+    return;
+  }
+
+  const nextWidth = Math.max(280, Math.min(Math.floor(facebookFrame.clientWidth), 500));
+
+  if (Math.abs(nextWidth - lastFacebookWidth) < 8) {
+    return;
+  }
+
+  lastFacebookWidth = nextWidth;
+
+  const baseSrc = facebookEmbed.dataset.baseSrc;
+
+  if (!baseSrc) {
+    return;
+  }
+
+  const embedUrl = new URL(baseSrc);
+  embedUrl.searchParams.set("width", String(nextWidth));
+  facebookEmbed.width = String(nextWidth);
+  facebookEmbed.src = embedUrl.toString();
+};
+
 if (menuToggle && header && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("menu-open");
@@ -118,6 +147,20 @@ if (menuToggle && header && siteNav) {
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
+}
+
+if (facebookEmbed && facebookFrame) {
+  syncFacebookEmbed();
+
+  if ("ResizeObserver" in window) {
+    const facebookObserver = new ResizeObserver(() => {
+      syncFacebookEmbed();
+    });
+
+    facebookObserver.observe(facebookFrame);
+  } else {
+    window.addEventListener("resize", syncFacebookEmbed, { passive: true });
+  }
 }
 
 setOpenToday();
