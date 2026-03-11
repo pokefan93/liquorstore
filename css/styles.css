@@ -1,3 +1,4 @@
+/* If I ever do a color refresh, start here first so I am not hunting random hex codes all over the file. */
 :root {
   --bg: #f3ede3;
   --bg-soft: #fbf7f0;
@@ -228,6 +229,8 @@ select {
   transform: scale(1.58);
   image-rendering: -webkit-optimize-contrast;
 }
+
+/* If I swap the little round logo image later, this crop is the part that usually needs a tiny nudge. */
 
 .brand-copy {
   display: grid;
@@ -672,7 +675,10 @@ select {
   width: 100%;
   height: 760px;
   min-height: 760px;
+  border: 0;
 }
+
+/* The Facebook embed likes a fixed-ish height. If it ever feels too tall or too cramped, tweak this number first. */
 
 .facebook-card-actions {
   display: flex;
@@ -763,6 +769,8 @@ select {
   background: #d8d0c6;
   aspect-ratio: 16 / 6;
 }
+
+/* Old class name, current job: this is just the wide photo slot in the Why section. Keep the aspect ratio unless I want the layout to shift. */
 
 .drive-thru-card img {
   width: 100%;
@@ -1083,6 +1091,8 @@ select {
   border: 0;
 }
 
+/* If the map ever feels too short on desktop or too tall on phones, this embed height is the first knob to turn. */
+
 .map-embed-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1129,6 +1139,8 @@ select {
   text-align: right;
 }
 
+/* Footer stacks on smaller screens below, so if I ever move stuff around down there this alignment block matters. */
+
 .footer-bottom p {
   margin: 0;
 }
@@ -1154,6 +1166,8 @@ select {
     filter 420ms ease;
   will-change: opacity, transform;
 }
+
+/* All the scroll-in motion runs off these classes. If I want a simpler site later, this is a clean place to trim the fancy stuff. */
 
 .js [data-reveal].is-hidden-above {
   transform: translate3d(0, -26px, 0) scale(0.985);

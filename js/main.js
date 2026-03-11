@@ -1,3 +1,4 @@
+// I keep the site clock locked to the store's timezone so the hours note and footer year do not drift for out-of-state visitors.
 const root = document.documentElement;
 const header = document.querySelector("[data-header]");
 const openTodayNode = document.querySelector("[data-open-today]");
@@ -6,11 +7,13 @@ const yearNode = document.querySelector("[data-year]");
 const facebookEmbed = document.querySelector("[data-facebook-embed]");
 const facebookFrame = facebookEmbed?.closest(".facebook-frame") ?? null;
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const siteTimeZone = "America/Chicago";
 const revealInset = 56;
 const revealVisibleClass = "is-visible";
 const revealAboveClass = "is-hidden-above";
 const revealBelowClass = "is-hidden-below";
 
+// If store hours change later, update this object and the visible hours copy in the HTML so the site does not tell two different stories.
 const weeklyHours = {
   Sunday: "Closed today",
   Monday: "Open today: 10 AM - 8 PM",
@@ -21,6 +24,7 @@ const weeklyHours = {
   Saturday: "Open today: 10 AM - 9 PM",
 };
 
+// This fills the little top-bar line with the right day based on the store's local time.
 const setOpenToday = () => {
   if (!openTodayNode) {
     return;
@@ -28,7 +32,7 @@ const setOpenToday = () => {
 
   const weekday = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
-    timeZone: "America/Chicago",
+    timeZone: siteTimeZone,
   }).format(new Date());
 
   openTodayNode.textContent = weeklyHours[weekday] ?? "Hours: Call the store";
@@ -115,6 +119,7 @@ const initReveal = () => {
 
 let lastFacebookWidth = 0;
 
+// Facebook's embed wants a real width value. This keeps it from looking busted on phones without hardcoding a pile of breakpoints.
 const syncFacebookEmbed = () => {
   if (!facebookEmbed || !facebookFrame) {
     return;
@@ -140,8 +145,12 @@ const syncFacebookEmbed = () => {
   facebookEmbed.src = embedUrl.toString();
 };
 
+// Leave the footer span in the HTML. This fills it in automatically every year using the store timezone.
 if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
+  yearNode.textContent = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    timeZone: siteTimeZone,
+  }).format(new Date());
 }
 
 if (facebookEmbed && facebookFrame) {
@@ -165,6 +174,7 @@ initReveal();
 window.addEventListener("scroll", setScrolledState, { passive: true });
 window.addEventListener("resize", initReveal, { passive: true });
 
+// If somebody ever wants to kill the motion effects entirely, this is the switchboard for that behavior.
 const handleReducedMotionChange = () => {
   if (reduceMotionQuery.matches) {
     destroyRevealObserver();

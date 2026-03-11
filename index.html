@@ -3,6 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!--
+      If I ever change the business name, the domain, the address, or the main marketing copy,
+      I need to update the SEO tags and the JSON-LD block together so Google does not get mixed up.
+    -->
+    <!--
+      This site is static, so this CSP meta tag is one of the main browser-side hardening moves.
+      If I change the inline JSON-LD block or the tiny no-JS helper below, these script hashes have
+      to be refreshed too or the browser will block them.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' 'sha256-OS0x7Ag6IU5HojkJYOkP7LhbGanQaY6FHGqMXprL7jc=' 'sha256-g3MtU+UAj36zgCt7LjOPT2uXsn+VI56HMOIOefwAqXE='; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-src https://www.facebook.com https://www.google.com;"
+    />
     <meta
       name="description"
       content="Looking for a liquor store in Bella Vista, a wine store in Bella Vista, whiskey in Bella Vista, AR, wine tastings in Bella Vista, or a drive thru liquor store in Bella Vista? Bella Vista Wine &amp; Spirits offers beer, wine, spirits, whiskey, tastings, and quick drive-thru convenience."
@@ -107,11 +121,13 @@
       document.documentElement.classList.add("js");
     </script>
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Keep this local unless there is a very real reason not to. Fewer third-party scripts means fewer headaches. -->
     <script src="js/main.js" defer></script>
   </head>
   <body id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
+    <!-- If the store phone, address, or hours ever change, this top strip is one of the first spots I need to touch. -->
     <div class="utility-bar">
       <div class="container utility-inner">
         <div class="utility-primary">
@@ -119,7 +135,7 @@
             class="utility-link utility-link-address"
             href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             31 Cunningham Corner, Bella Vista, AR 72714
           </a>
@@ -133,6 +149,7 @@
 
     <header class="site-header" data-header>
       <div class="container header-inner">
+        <!-- If I ever swap the little round brand image, keep this one square-ish so the crop still behaves. -->
         <a class="brand" href="#top" aria-label="Bella Vista Wine &amp; Spirits home">
           <span class="brand-mark" aria-hidden="true">
             <img
@@ -161,12 +178,13 @@
         </nav>
 
         <div class="header-meta">
+          <!-- These are the live social links. If the handles ever change, update them here and in the JSON-LD block up top. -->
           <div class="header-social" aria-label="Follow Bella Vista Wine &amp; Spirits">
             <a
               class="header-social-link"
               href="https://www.facebook.com/VillagePeopleLiquor/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Follow Bella Vista Wine &amp; Spirits on Facebook"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -181,7 +199,7 @@
               class="header-social-link"
               href="https://www.instagram.com/bvwineandspirits/?hl=en"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Follow Bella Vista Wine &amp; Spirits on Instagram"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -198,6 +216,7 @@
     </header>
 
     <main id="main-content">
+      <!-- Hero copy is the big first-impression section. If I rewrite the homepage one day, this is the main sales pitch area. -->
       <section class="hero section">
         <div class="container hero-grid">
           <div class="hero-copy" data-reveal>
@@ -225,6 +244,7 @@
 
           <div class="hero-media" data-reveal>
             <figure class="hero-card hero-card-main">
+              <!-- Main storefront photo. If I replace it later, keep it nice and wide so the layout does not get funky. -->
               <img
                 src="assets/storefront.jpg"
                 alt="Front entrance of Bella Vista Wine &amp; Spirits."
@@ -240,6 +260,7 @@
           <p class="hero-quote hero-quote-band" data-reveal>
             &ldquo;Convenience and connoisseurship all in one place.&rdquo;
           </p>
+          <!-- Weller lives here. If I swap the mascot photo or quote, this is the whole chunk. -->
           <aside class="weller-chip" data-reveal aria-label="Weller the store mascot">
             <div class="weller-chip-photo">
               <img
@@ -262,6 +283,7 @@
         </div>
       </section>
 
+      <!-- This Facebook section is the only third-party social embed on the page. Keep it locked to the official page URL. -->
       <section class="section social-feed" id="facebook">
         <div class="container">
           <div class="section-heading social-feed-heading" data-reveal>
@@ -277,12 +299,12 @@
                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FVillagePeopleLiquor%2F&amp;tabs=timeline&amp;width=340&amp;height=760&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false"
                 width="340"
                 height="760"
-                style="border: none; overflow: hidden"
                 scrolling="no"
                 frameborder="0"
                 allowfullscreen="true"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allow="encrypted-media; picture-in-picture; web-share"
                 loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
             <div class="facebook-card-actions">
@@ -290,7 +312,7 @@
                 class="btn btn-solid"
                 href="https://www.facebook.com/VillagePeopleLiquor/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Follow Us on Facebook
               </a>
@@ -302,9 +324,10 @@
       <section class="section section-warm" id="why">
         <div class="container">
           <figure class="drive-thru-card" data-reveal>
+            <!-- This is the wide "why people come here" photo slot. Any future replacement should stay landscape-ish. -->
             <img
-              src="assets/drive-thru.jpg"
-              alt="Staff member helping a customer at the drive-thru window."
+              src="assets/interior-aisle.jpg"
+              alt="Interior aisle at Bella Vista Wine &amp; Spirits showing wine and spirits selection."
               width="1000"
               height="667"
               loading="lazy"
@@ -352,6 +375,7 @@
         </div>
       </section>
 
+      <!-- Hours and contact info live here too, so if those change I need to update both this section and the footer. -->
       <section class="section visit" id="visit">
         <div class="container">
           <div class="section-heading" data-reveal>
@@ -384,7 +408,7 @@
                   class="btn btn-outline"
                   href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Get Directions
                 </a>
@@ -394,6 +418,7 @@
         </div>
       </section>
 
+      <!-- Map embed is handy, but it is still third-party stuff. If I ever replace it, only use a legit map provider embed URL. -->
       <section class="section map-section" id="directions">
         <div class="container">
           <div class="section-heading map-section-heading" data-reveal>
@@ -407,7 +432,7 @@
               title="Map to Bella Vista Wine and Spirits"
               src="https://www.google.com/maps?q=31%20Cunningham%20Corner%2C%20Bella%20Vista%2C%20AR%2072714&amp;z=15&amp;output=embed"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerpolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
 
@@ -416,7 +441,7 @@
               class="btn btn-solid"
               href="https://www.google.com/maps/search/?api=1&amp;query=31+Cunningham+Corner+Bella+Vista+AR+72714"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Get Directions
             </a>
@@ -446,7 +471,8 @@
       </div>
 
       <div class="container footer-bottom">
-        <p>&copy; <span data-year></span> Bella Vista Wine &amp; Spirits</p>
+        <!-- Leave data-year alone. The JS file updates it automatically every year so nobody has to remember it in January. -->
+        <p>&copy; <span data-year>2026</span> Bella Vista Wine &amp; Spirits</p>
         <p class="footer-credit">
           <a href="https://taylorstechsolutions.com">Web Design by Taylor's Tech Solutions</a>
         </p>
